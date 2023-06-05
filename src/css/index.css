@@ -1,31 +1,73 @@
+@font-face {
+  font-family: 'Helvtica Neue';
+  src: url('/src/assets/fonts/helvetica-neue.ttf') format('truetype');
+  font-weight: 400;
+}
+
 :root {
   /* font stuff */
-  --font-size-basis: 1rem;
-  --type-scale: 1.25;
+  --font-size-basis: 28px;
+  --type-scale: 1.2;
   --h5: var(--font-size-basis);
   --h4: calc(var(--h5) * var(--type-scale));
   --h3: calc(var(--h4) * var(--type-scale));
   --h2: calc(var(--h3) * var(--type-scale));
   --h1: calc(var(--h2) * var(--type-scale));
   --font-small: calc(0.667rem);
-  --font-family: 'Open Sans', sans-serif;
+  --font-family: 'Helvetica Neue', sans-serif;
+  --secondary-font-family: 'Inter', sans-serif;
+  --font-weight: 400;
   /* colors */
-
+  --white: #fff;
+  --black: #000;
+  --primary-color: #871D63;
+  --muted-purple: #85456F;
+  --text-purple: #85456FCC;
+  --grey: #ECE8DD;
+  --muted-grey: #DEDBD1;
 }
 
 html {
-  font-size: 100%;
+  font-size: var(--font-size-basis);
   font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  background-color: var(--grey);
 }
 
 ul {
   list-style: none;
 }
 
-/* ::-moz-selection {
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+::-moz-selection {
   background-color: var(--primary-color);
+  color: var(--white);
 }
 
 ::selection {
   background-color: var(--primary-color);
-} */
+  color: var(--white);
+}
