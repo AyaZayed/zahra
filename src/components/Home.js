@@ -2,8 +2,9 @@ import React from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import logo from '../assets/logo/logo.png'
+import zahra from '../assets/logo/zahra.png'
 import welcome from '../assets/illustorations/landing-doctors.png'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import network from '../assets/icons/network.png'
 import search from '../assets/icons/search.png'
 import phone from '../assets/icons/phone.png'
@@ -49,7 +50,35 @@ export default function Home() {
                         <Link to='/services' exact='true'><button className='primary-button'>اضغط لمعرفة المزيد</button></Link>
                     </div>
                 </section>
-                <section className="subscriptions"></section>
+                <section className="subscriptions">
+                    <div className="subscriptions-text">
+                        <img src={zahra} alt='zahra' />
+                        <p>نوفر في زهرة خطط إشتراك لتناسب جميع المستخدمين بادر الآن واشترك في زهرة لتسهيل رحلتك كطبيب </p>
+                    </div>
+                    <div className="subs">
+                        <h3>اختر الاشتراك المناسب لك</h3>
+                        <div className="subs-list">
+                            <div className="subs-item">
+                                <h4>اشتراك أسبوعي </h4>
+                                <p>استمتع بجميع خدمات زهرة لمدة أسبوع واحد</p>
+                                <h5>EGP<span className='price'>50</span></h5>
+                                <button className='secondary-button'>اشترك الآن</button>
+                            </div>
+                            <div className="subs-item">
+                                <h4>اشتراك شهري </h4>
+                                <p>اشترك واحصل على فترة تجريبية مجانية لمدة 30 يوم</p>
+                                <h5>EGP<span className='price'>150</span></h5>
+                                <button className='secondary-button'>اشترك الآن</button>
+                            </div>
+                            <div className="subs-item">
+                                <h4>اشتراك سنوي </h4>
+                                <p>اشترك بسعر أوفر لمدة 3 أشهر</p>
+                                <h5>EGP<span className='price'>300</span></h5>
+                                <button className='secondary-button'>اشترك الآن</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
             <Footer />
         </>
