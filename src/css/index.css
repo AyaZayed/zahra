@@ -6,8 +6,8 @@
 
 :root {
   /* font stuff */
-  --font-size-basis: 24px;
-  --type-scale: 1.17;
+  --font-size-basis: 32px;
+  --type-scale: 1.15;
   --h5: var(--font-size-basis);
   --h4: calc(var(--h5) * var(--type-scale));
   --h3: calc(var(--h4) * var(--type-scale));
@@ -25,6 +25,7 @@
   --text-purple: #85456FCC;
   --grey: #ECE8DD;
   --muted-grey: #DEDBD1;
+  --text-color: #000000B2;
 }
 
 html {
@@ -32,6 +33,7 @@ html {
   font-family: var(--font-family);
   font-weight: var(--font-weight);
   background-color: var(--grey);
+  color: var(--text-color);
 }
 
 ul {

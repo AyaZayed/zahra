@@ -5,6 +5,22 @@ body,
   width: 100%;
 }
 
+.primary-button {
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--white);
+  cursor: pointer;
+  padding: .2rem .5rem .4rem;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .2);
+}
+
+/* navbar */
+
 .navbar {
   width: 100vw;
   padding: 1rem 0;
@@ -179,7 +195,7 @@ footer .socials img {
   margin-top: 1rem;
 }
 
-.welcome .welcome-text h1 {
+.welcome .welcome-text h2 {
   color: var(--primary-color);
   display: flex;
   align-items: center;
@@ -189,19 +205,9 @@ footer .socials img {
 .welcome .welcome-text button {
   margin-top: 1rem;
   padding: .3rem 2rem .5rem;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
-  border: none;
-  background-color: var(--primary-color);
-  color: var(--white);
-  cursor: pointer;
 }
 
 .welcome .welcome-text p {
-  width: 60%;
   line-height: 55px;
 }
 
@@ -215,12 +221,89 @@ footer .socials img {
     flex-basis: 47%;
   }
 
-  .welcome .welcome-text h1 {
+  .welcome .welcome-text h2 {
     flex-flow: row wrap;
   }
 
   .welcome .welcome-image {
     flex-basis: 53%;
     margin-top: 5rem;
+  }
+}
+
+/* services section */
+
+.services {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.services .services-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+  order: 2;
+}
+
+.services .services-list .services-item {
+  border: 5px solid var(--primary-color);
+  padding: 1.2rem 0 .8rem;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+.services .services-list .services-item img {
+  width: 100px;
+  height: 100px;
+}
+
+.services .services-list .services-item h6 {
+  font-family: var(--secondary-font-family);
+  font-size: 24px;
+  margin: .5rem;
+}
+
+.services .services-text {
+  order: 1;
+}
+
+.services .services-text h1 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.services .services-text p {
+  line-height: 55px;
+}
+
+.services .services-text button {
+  margin: 1rem 0 2rem;
+}
+
+@media (min-width: 768px) {
+  .services {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .services .services-list {
+    flex-basis: 50%;
+    grid-template-columns: repeat(2, 1fr);
+    order: 1;
+  }
+
+  .services .services-text {
+    flex-basis: 43%;
+    order: 2;
   }
 }
