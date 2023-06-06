@@ -99,6 +99,7 @@ body,
   .navbar {
     flex-flow: row nowrap;
     justify-content: space-around;
+    align-items: center;
     position: fixed;
     display: flex;
     padding: .3rem;
@@ -155,5 +156,71 @@ footer .socials img {
     align-items: center;
     padding: 0;
     text-align: right;
+  }
+}
+
+/* home page */
+/* welcome section */
+
+.welcome {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.welcome .welcome-image img {
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+}
+
+.welcome .welcome-text h1 {
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+.welcome .welcome-text button {
+  margin-top: 1rem;
+  padding: .3rem 2rem .5rem;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.welcome .welcome-text p {
+  width: 60%;
+  line-height: 55px;
+}
+
+@media(min-width: 768px) {
+  .welcome {
+    padding: 0 2rem;
+    text-align: right;
+  }
+
+  .welcome .welcome-text {
+    flex-basis: 47%;
+  }
+
+  .welcome .welcome-text h1 {
+    flex-flow: row wrap;
+  }
+
+  .welcome .welcome-image {
+    flex-basis: 53%;
+    margin-top: 5rem;
   }
 }
