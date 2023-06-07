@@ -9,6 +9,10 @@ import network from '../assets/icons/network.png'
 import search from '../assets/icons/search.png'
 import phone from '../assets/icons/phone.png'
 import diagnostic from '../assets/icons/diagnostic.png'
+import apple from '../assets/icons/apple.png'
+import google from '../assets/icons/google-play.png'
+import appGallery from '../assets/icons/app-gallery.png'
+import phones from '../assets/illustorations/phones.png'
 
 export default function Home() {
     return (
@@ -77,6 +81,22 @@ export default function Home() {
                                 <button className='secondary-button'>اشترك الآن</button>
                             </div>
                         </div>
+                    </div>
+                </section>
+                <section className='app'>
+                    <div className='app-text'>
+                        <h3>خدماتنا ليست مقتصرة على الأطباء فقط</h3>
+                        <p>تطبيق زهرة يرافقك خطوة بخطوة في رحلة علاجك يساعدك على :
+                            تنظيم وتذكر مواعيد أدويتك , البحث عن الطبيب المناسب لك وسهولة التواصل معه  ,  متابعة  اي تغيرات تطرأ على جسدك وسهولة مشاركتها مع طبيبك الخاص , كل هذا وأكثر في مكان واحد</p>
+                        <h3>حمل تطبيق زهرة الآن مجاناً</h3>
+                        <div className='app-buttons'>
+                            <Link to='#' exact='true'>App Store<img src={apple} alt='apple logo' /></Link>
+                            <Link to='#' exact='true'>Google Play<img src={google} alt='google play logo' /></Link>
+                            <Link to='#' exact='true'>App Gallery<img src={appGallery} alt='app gallery logo' /></Link>
+                        </div>
+                    </div>
+                    <div className='app-image'>
+                        <img src={phones} alt='image of three phones with the app open' />
                     </div>
                 </section>
             </main>
