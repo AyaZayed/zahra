@@ -6,14 +6,15 @@
 
 :root {
   /* font stuff */
-  --small: 16px;
-  --h6: 20px;
-  --h5: 24px;
-  --h4: 32px;
-  --h3: 40px;
-  --h2: 50px;
-  --h1: 64px;
-  --font-small: calc(0.667rem);
+  --font-size-basis: 1.3rem;
+  --type-scale: 1.2;
+  --h6: var(--font-size-basis);
+  --h5: calc(var(--h6) * var(--type-scale));
+  --h4: calc(var(--h5) * var(--type-scale));
+  --h3: calc(var(--h4) * var(--type-scale));
+  --h2: calc(var(--h3) * var(--type-scale));
+  --h1: calc(var(--h2) * var(--type-scale));
+  --small: calc(1rem);
   --font-family: 'Helvetica Neue', sans-serif;
   --secondary-font-family: 'Inter', sans-serif;
   --font-weight: 400;
@@ -30,7 +31,7 @@
 }
 
 html {
-  font-size: 32px;
+  font-size: var(--font-size-basis);
   font-family: var(--font-family);
   font-weight: var(--font-weight);
   background-color: var(--grey);

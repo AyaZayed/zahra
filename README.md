@@ -2,5 +2,6 @@
 
 Use these commands:
 
-- npm i
-- npm start
+### - npm i
+
+### - npm start

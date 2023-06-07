@@ -33,15 +33,15 @@ export default function Home() {
                     <div className='services-list'>
                         <div className='services-item'>
                             <img src={network} alt='a network of people' />
-                            <h5>الوصول لعدد اكبر من المرضى</h5>
+                            <h6>الوصول لعدد اكبر من المرضى</h6>
                         </div>
                         <div className='services-item'>
                             <img src={search} alt='a magnifying glass' />
-                            <h5>متابعة مستجدات المرضى اليومية</h5>
+                            <h6>متابعة مستجدات المرضى اليومية</h6>
                         </div>
                         <div className='services-item'>
                             <img src={phone} alt='a phone' />
-                            <h5>سهولة التواصل مع المريض</h5>
+                            <h6>سهولة التواصل مع المريض</h6>
                         </div>
                         <div className='services-item'>
                             <img src={diagnostic} alt='computer with a magnifying glass that has a heart rate on it' />
@@ -63,21 +63,21 @@ export default function Home() {
                         <h3>اختر الاشتراك المناسب لك</h3>
                         <div className="subs-list">
                             <div className="subs-item">
-                                <h4>اشتراك أسبوعي </h4>
+                                <h5>اشتراك أسبوعي </h5>
                                 <p>استمتع بجميع خدمات زهرة لمدة أسبوع واحد</p>
-                                <h5>EGP<span className='price'>50</span></h5>
+                                <h6>EGP<span className='price'>50</span></h6>
                                 <button className='secondary-button'>اشترك الآن</button>
                             </div>
                             <div className="subs-item">
-                                <h4>اشتراك شهري </h4>
+                                <h5>اشتراك شهري </h5>
                                 <p>اشترك واحصل على فترة تجريبية مجانية لمدة 30 يوم</p>
-                                <h5>EGP<span className='price'>150</span></h5>
+                                <h6>EGP<span className='price'>150</span></h6>
                                 <button className='secondary-button'>اشترك الآن</button>
                             </div>
                             <div className="subs-item">
-                                <h4>اشتراك 90 يوم </h4>
+                                <h5>اشتراك 90 يوم </h5>
                                 <p>اشترك بسعر أوفر لمدة 3 أشهر</p>
-                                <h5>EGP<span className='price'>300</span></h5>
+                                <h6>EGP<span className='price'>300</span></h6>
                                 <button className='secondary-button'>اشترك الآن</button>
                             </div>
                         </div>
