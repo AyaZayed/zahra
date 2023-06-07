@@ -29,15 +29,15 @@ export default function Home() {
                     <div className='services-list'>
                         <div className='services-item'>
                             <img src={network} alt='a network of people' />
-                            <h6>الوصول لعدد اكبر من المرضى</h6>
+                            <h5>الوصول لعدد اكبر من المرضى</h5>
                         </div>
                         <div className='services-item'>
                             <img src={search} alt='a magnifying glass' />
-                            <h6>متابعة مستجدات المرضى اليومية</h6>
+                            <h5>متابعة مستجدات المرضى اليومية</h5>
                         </div>
                         <div className='services-item'>
                             <img src={phone} alt='a phone' />
-                            <h6>سهولة التواصل مع المريض</h6>
+                            <h5>سهولة التواصل مع المريض</h5>
                         </div>
                         <div className='services-item'>
                             <img src={diagnostic} alt='computer with a magnifying glass that has a heart rate on it' />
@@ -71,7 +71,7 @@ export default function Home() {
                                 <button className='secondary-button'>اشترك الآن</button>
                             </div>
                             <div className="subs-item">
-                                <h4>اشتراك سنوي </h4>
+                                <h4>اشتراك 90 يوم </h4>
                                 <p>اشترك بسعر أوفر لمدة 3 أشهر</p>
                                 <h5>EGP<span className='price'>300</span></h5>
                                 <button className='secondary-button'>اشترك الآن</button>

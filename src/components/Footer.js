@@ -15,18 +15,18 @@ export default function Footer() {
                 </Link>
             </div>
             <div className="container">
-                <h6>من نحن</h6>
-                <h6>آراء المستخدمين</h6>
+                <small>من نحن</small>
+                <small>آراء المستخدمين</small>
             </div>
             <div className="container">
-                <h6>سياسة الخصوصية</h6>
-                <h6>شروط الاستخدام</h6>
+                <small>سياسة الخصوصية</small>
+                <small>شروط الاستخدام</small>
             </div>
             <div className="container">
-                <h6>تواصل معنا</h6>
-                <h6>للإعلان</h6>
+                <small>تواصل معنا</small>
+                <small>للإعلان</small>
             </div>
-            <div className="container socials">
+            <div className="socials">
                 <Link to='#' exact='true' className='mail'>
                     <img src={email} alt="link to zahra email" />
                 </Link>
