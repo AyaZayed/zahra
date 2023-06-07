@@ -592,3 +592,98 @@ footer small:hover {
     justify-content: flex-start;
   }
 }
+
+/* login page */
+
+.login-page {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.login-page .login-form {
+  order: 1;
+  padding: 2rem 0;
+}
+
+.login-page .login-image {
+  background: url(../assets/illustorations/login-background.png) no-repeat center center/cover;
+  order: 2;
+  height: 100vh;
+  width: 100%;
+}
+
+.login-page .login-image img {
+  width: 100%;
+  height: auto;
+}
+
+.login-page .login-form .login-tabs button {
+  border: none;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  font-family: var(--secondary-font-family);
+  color: var(--primary-color);
+  background-color: #EADECF;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.login-page .login-form .login-tabs button:first-of-type {
+  border-top-right-radius: 20px;
+  -webkit-border-top-right-radius: 20px;
+  -moz-border-top-right-radius: 20px;
+  -ms-border-top-right-radius: 20px;
+  -o-border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -moz-border-bottom-right-radius: 20px;
+  -ms-border-bottom-right-radius: 20px;
+  -o-border-bottom-right-radius: 20px;
+}
+
+.login-page .login-form .login-tabs button:last-of-type {
+  border-top-left-radius: 20px;
+  -webkit-border-top-left-radius: 20px;
+  -moz-border-top-left-radius: 20px;
+  -ms-border-top-left-radius: 20px;
+  -o-border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  -webkit-border-bottom-left-radius: 20px;
+  -moz-border-bottom-left-radius: 20px;
+  -ms-border-bottom-left-radius: 20px;
+  -o-border-bottom-left-radius: 20px;
+}
+
+.login-page .login-form .login-tabs button.active {
+  background-color: var(--primary-color);
+  color: var(--white);
+  box-shadow: -2px 5px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 768px) {
+  .login-page {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .login-page .login-form {
+    flex-basis: 50%;
+    order: 2;
+  }
+
+  .login-page .login-image {
+    flex-basis: 50%;
+    order: 1;
+  }
+}
