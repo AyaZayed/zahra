@@ -11,7 +11,7 @@ export default function LoginPage() {
             <div className='login-image'>
                 <img src={loginImage} alt="login" />
             </div>
-            <div className='login-form'>
+            <div className='login-text'>
                 <div className='login-tabs'>
                     <button className={newUser ? 'login-btn active' : 'login-btn'} onClick={() => setNewUser(true)}>
                         حساب جديد</button>
