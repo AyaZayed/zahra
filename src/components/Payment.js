@@ -3,6 +3,9 @@ import { useLocation } from 'react-router-dom'
 import loginImage from '../assets/illustorations/login-page.png'
 import creditCard from '../assets/icons/credit-card.png'
 import fawry from '../assets/icons/fawry.png'
+import { Link } from 'react-router-dom'
+import Fawry from './Fawry'
+import Visa from './Visa'
 
 export default function Payment() {
     const location = useLocation();
@@ -60,8 +63,12 @@ export default function Payment() {
                         </div>
                     </div>
                     <div className='payment-details'>
-                        {method}
+                        {method === 'fawry' ? <Fawry />
+                            : method === 'visa' ? <Visa /> : ''}
                     </div>
+                    <Link to='/dashboard' exact='true'>
+                        <button className='primary-button'>تأكيد الإشتراك</button>
+                    </Link>
                 </form>
             </div>
         </div>
