@@ -24,7 +24,6 @@ export default function LoginPage() {
                     newUser ? <Signup /> : <Login />
                 }
             </div>
-
         </div>
     )
 }

@@ -407,6 +407,8 @@ footer small:hover {
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
 }
 
@@ -417,51 +419,76 @@ footer small:hover {
   margin-bottom: 1rem;
 }
 
-.subscriptions .subs .subs-list {
+.subs .subs-list {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
 }
 
-.subscriptions .subs-item {
+.subs .subs-item {
   border: 4px solid var(--primary-color);
   padding: .2rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
   position: relative;
 }
 
-.subscriptions .subs-item h5,
-.subscriptions .subs-item h6,
-.subscriptions .subs-item p,
-.subscriptions .subs-item button {
+.subs .subs-item:nth-child(2)::after {
+  content: "ننصح به";
+  font-size: 16px;
+  position: absolute;
+  top: 15px;
+  left: -23px;
+  width: 100px;
+  height: fit-content;
+  padding-bottom: .3rem;
+  background-color: #F6991A;
+  color: var(--white);
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.subs .subs-item h5,
+.subs .subs-item h6,
+.subs .subs-item p,
+.subs .subs-item button {
   margin: .5rem;
 }
 
-.subscriptions .subs-item h5 {
+.subs .subs-item h5 {
   color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
-.subscriptions p {
+.subs p {
   line-height: 34.68px;
 }
 
-.subscriptions .subs-item p {
+.subs .subs-item p {
   margin-bottom: .7rem;
 }
 
-.subscriptions .subs-item h6 {
+.subs .subs-item h6 {
   font-size: 14px;
   color: var(--black);
   margin-bottom: 0;
 }
 
-.subscriptions .subs-item h6 span {
+.subs .subs-item h6 span {
   font-size: 36px;
   font-weight: 700;
 }
 
-.subscriptions .subs-item button {
+.subs .subs-item button {
   color: var(--primary-color);
   background-color: var(--white);
   border: none;
@@ -479,7 +506,7 @@ footer small:hover {
   -o-transition: all .3s ease;
 }
 
-.subscriptions .subs-item button:hover {
+.subs .subs-item button:hover {
   color: var(--white);
   background-color: var(--primary-color);
 }
@@ -489,11 +516,11 @@ footer small:hover {
     flex-flow: row wrap;
   }
 
-  .subscriptions .subs .subs-list {
+  .subs .subs-list {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .subscriptions .subs-item {
+  .subs .subs-item {
     height: 100%;
   }
 
@@ -618,7 +645,7 @@ footer small:hover {
 .login-page .login-image {
   background: url(../assets/illustorations/login-background.png) no-repeat center center/cover;
   order: 2;
-  height: 135vh;
+  height: 160vh;
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
@@ -737,6 +764,22 @@ footer small:hover {
   caret-color: var(--primary-color);
 }
 
+.primary-label input::-webkit-input-placeholder {
+  color: var(--text-purple);
+}
+
+.primary-label input::-moz-placeholder {
+  color: var(--text-purple);
+}
+
+.primary-label input:-ms-input-placeholder {
+  color: var(--text-purple);
+}
+
+.primary-label input::-ms-input-placeholder {
+  color: var(--text-purple);
+}
+
 .primary-label input::placeholder {
   color: var(--text-purple);
 }
@@ -841,7 +884,13 @@ footer small:hover {
 }
 
 .signup-form {
-  width: 60%;
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  .signup-form {
+    width: 60%;
+  }
 }
 
 .signup-form .first-group {
@@ -913,7 +962,7 @@ footer small:hover {
   caret-color: var(--primary-color);
 }
 
-.signup-form .specialization {
+.select-wrapper .primary-select {
   width: 100%;
   padding: .6rem 2.6rem .7rem;
   margin: .5rem 0;
@@ -923,13 +972,14 @@ footer small:hover {
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+  color: var(--text-purple);
 }
 
-.signup-form .specialization-wrapper {
+.select-wrapper {
   position: relative;
 }
 
-.signup-form #stethoscope {
+.select-wrapper img {
   position: absolute;
   top: 1.2rem;
   right: 1rem;
@@ -948,4 +998,79 @@ footer small:hover {
 
 .signup-form .gender-group h6 {
   margin: 0;
+}
+
+.signup-form .gender-group input {
+  border: none;
+}
+
+.subscribe-form {
+  width: 90%;
+}
+
+.subscribe-form h6,
+.subscribe-form small {
+  color: var(--primary-color);
+}
+
+.subscribe-form h6 {
+  margin: 2rem
+}
+
+.subscribe-form small {
+  margin: 0;
+}
+
+.subscribe-form .subs {
+  background-color: var(--primary-color);
+  padding: .5rem;
+  margin-bottom: 3rem;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+@media (min-width: 768px) {
+  .subscribe-form .subs {
+    padding: .5rem .5rem 1.3rem;
+  }
+
+  .subscribe-form {
+    width: 80%;
+  }
+}
+
+.subscribe-form .subs .subs-list {
+  gap: .5rem;
+}
+
+.subscribe-form .subs .subs-item {
+  padding-top: .6rem;
+  background-color: var(--grey);
+  border: none;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.subscribe-form .subs h6 {
+  font-size: 10px;
+}
+
+.subscribe-form .subs h6 .price {
+  font-size: 20px;
+}
+
+.subscribe-form .subs p {
+  font-size: 13px;
+  height: 30%;
+  line-height: 20.23px;
+}
+
+.subscribe-form button {
+  padding: .4rem 3rem .5rem;
 }

@@ -15,6 +15,8 @@ import appGallery from '../assets/icons/app-gallery.png'
 import phones from '../assets/illustorations/phones.png'
 
 export default function Home() {
+    const price = ['50', '150', '300']
+
     return (
         <>
             <Navbar />
@@ -65,20 +67,20 @@ export default function Home() {
                             <div className="subs-item">
                                 <h5>اشتراك أسبوعي </h5>
                                 <p>استمتع بجميع خدمات زهرة لمدة أسبوع واحد</p>
-                                <h6>EGP<span className='price'>50</span></h6>
-                                <button className='secondary-button'>اشترك الآن</button>
+                                <h6>EGP<span className='price'>{price[0]}</span></h6>
+                                <Link to='/payment' state={price[0]} exact='true'><button className='secondary-button'>اشترك الآن</button></Link>
                             </div>
                             <div className="subs-item">
                                 <h5>اشتراك شهري </h5>
                                 <p>اشترك واحصل على فترة تجريبية مجانية لمدة 30 يوم</p>
-                                <h6>EGP<span className='price'>150</span></h6>
-                                <button className='secondary-button'>اشترك الآن</button>
+                                <h6>EGP<span className='price'>{price[1]}</span></h6>
+                                <Link to='/payment' state={price[1]} exact='true'><button className='secondary-button'>اشترك الآن</button></Link>
                             </div>
                             <div className="subs-item">
                                 <h5>اشتراك 90 يوم </h5>
                                 <p>اشترك بسعر أوفر لمدة 3 أشهر</p>
-                                <h6>EGP<span className='price'>300</span></h6>
-                                <button className='secondary-button'>اشترك الآن</button>
+                                <h6>EGP<span className='price'>{price[2]}</span></h6>
+                                <Link to='/payment' state={price[2]} exact='true'><button className='secondary-button'>اشترك الآن</button></Link>
                             </div>
                         </div>
                     </div>

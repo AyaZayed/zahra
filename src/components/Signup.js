@@ -7,6 +7,7 @@ import phoneIcon from '../assets/icons/phone-icon.png'
 import stethoscope from '../assets/icons/stethoscope.png'
 import google from '../assets/icons/google.png'
 import facebook from '../assets/icons/facebook.png'
+import { Link } from 'react-router-dom'
 
 export default function Signup() {
     return (
@@ -44,9 +45,9 @@ export default function Signup() {
                         <option>الإمارات</option>
                     </select>
                 </div>
-                <div className='specialization-wrapper'>
-                    <img src={stethoscope} alt='stethoscope' id='stethoscope' />
-                    <select className='specialization'>
+                <div className='select-wrapper'>
+                    <img src={stethoscope} alt='stethoscope' />
+                    <select className='specialization primary-select'>
                         <option>التخصص</option>
                         <option>طبيب عام</option>
                         <option>طبيب باطنة</option>
@@ -55,10 +56,12 @@ export default function Signup() {
                 </div>
                 <div className='gender-group'>
                     <h6>النوع :</h6>
-                    <label htmlFor='female'><input id='female' value='female' type='radio' /> أنثى</label>
-                    <label htmlFor='male'><input id='male' value='male' type='radio' /> ذكر</label>
+                    <label htmlFor='female'><input id='female' value='female' type='radio' name='gender' /> أنثى</label>
+                    <label htmlFor='male'><input id='male' value='male' type='radio' name='gender' /> ذكر</label>
                 </div>
-                <button type='submit' className='primary-button'>الصفحة التالية</button>
+                <Link to='/subscribe'>
+                    <button type='submit' className='primary-button'>الصفحة التالية</button>
+                </Link>
                 <small>أو سجل باستخدام</small>
                 <div className='socials'>
                     <a href='#'><img src={facebook} alt='login using facebook' /></a>
