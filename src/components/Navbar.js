@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import logo from '../assets/logo/zahra.png'
 
 export default function Navbar() {
+
     return (
         <>
             <a href="#navbar" id="menu-toggle" className="menu-toggle" aria-label="Open  menu">
@@ -18,8 +19,8 @@ export default function Navbar() {
                 <ul>
                     <li><Link to='/' exact='true'>الصفحة الرئيسية</Link></li>
                     <li><Link to='/contact'>تواصل معنا </Link></li>
-                    <li><Link to='/login'>تسجيل الدخول</Link></li>
-                    <li><Link to='/login'><button>انضم الآن</button></Link></li>
+                    <li><Link state={false} to='/login'>تسجيل الدخول</Link></li>
+                    <li><Link state={true} to='/login'><button>انضم الآن</button></Link></li>
                 </ul>
                 <a href="#main-menu-toggle" className="backdrop" tabIndex="-1" hidden></a>
             </nav>

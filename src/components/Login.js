@@ -8,19 +8,18 @@ import checkmark from '../assets/icons/checkmark.png'
 
 export default function Login() {
     return (
-        <div className='login-form'>
+        <div className='form login-form'>
             <h4>أهلاََ بعودتك</h4>
             <form>
                 <div className='first-group'>
-                    <label>
+                    <label className='primary-label'>
                         <img src={user} alt='user' className='icon' />
-                        <input type="text" placeholder='أدخل اسمك الكامل'></input>
+                        <input classname='primary-input' type="text" placeholder='أدخل اسمك الكامل' />
                     </label>
-                    <label>
+                    <label className='primary-label'>
                         <img src={lock} alt='lock' className='icon' />
-                        <input type="password" placeholder='كلمة السر ' />
+                        <input classname='primary-input' type="password" placeholder='كلمة السر ' />
                         <img src={eye} alt='an eye when pressed makes the password unhidden' id='eye' />
-
                     </label>
                 </div>
                 <div className='second-group'>

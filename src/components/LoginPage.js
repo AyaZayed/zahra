@@ -3,9 +3,12 @@ import { useState } from 'react'
 import loginImage from '../assets/illustorations/login-page.png'
 import Login from './Login'
 import Signup from './Signup'
+import { useLocation } from 'react-router-dom'
 
 export default function LoginPage() {
-    const [newUser, setNewUser] = useState(false)
+    const location = useLocation();
+    const isNew = location.state;
+    const [newUser, setNewUser] = useState(isNew)
     return (
         <div className='login-page'>
             <div className='login-image'>

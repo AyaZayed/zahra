@@ -607,18 +607,23 @@ footer small:hover {
 
 .login-page .login-text {
   order: 1;
-  /* padding: 2rem 0; */
+  padding: 2rem 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  font-family: var(--secondary-font-family);
 }
 
 .login-page .login-image {
   background: url(../assets/illustorations/login-background.png) no-repeat center center/cover;
   order: 2;
-  height: 120vh;
+  height: 135vh;
   width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-page .login-image img {
@@ -702,20 +707,20 @@ footer small:hover {
 }
 
 .login-form form {
-  width: 130%;
+  width: 100%;
 }
 
 .login-form a {
   color: var(--muted-purple);
 }
 
-.login-form h4 {
+.form h4 {
   color: var(--primary-color);
   margin: 0;
   padding: 1.3rem;
 }
 
-.login-form .first-group input {
+.primary-label input {
   width: 100%;
   padding: .6rem 2.6rem .7rem;
   margin: .5rem 0;
@@ -727,22 +732,22 @@ footer small:hover {
   -o-border-radius: 20px;
 }
 
-.login-form .first-group input:focus {
+.primary-label input:focus {
   outline: 2px solid var(--primary-color);
   caret-color: var(--primary-color);
 }
 
-.login-form .first-group input::placeholder {
+.primary-label input::placeholder {
   color: var(--text-purple);
 }
 
-.login-form .first-group label {
+.primary-label {
   position: relative;
   display: flex;
   justify-content: center;
 }
 
-.login-form .first-group .icon {
+.primary-label .icon {
   position: absolute;
   top: 1.2rem;
   right: 1rem;
@@ -750,7 +755,7 @@ footer small:hover {
   height: 24px;
 }
 
-.login-form .first-group #eye {
+.primary-label #eye {
   position: absolute;
   width: 29px;
   top: 1.4rem;
@@ -780,13 +785,14 @@ footer small:hover {
   margin-left: 10px;
 }
 
-.login-form button {
+.form button {
   padding: .4rem 1.2rem .6rem;
   margin: 1rem 0;
 }
 
-.login-form small {
+.form small {
   color: var(--black);
+  margin-bottom: 1rem;
 }
 
 .login-form .socials {
@@ -796,13 +802,122 @@ footer small:hover {
 }
 
 .login-form .socials a {
+  margin-bottom: 1rem;
   background-color: var(--white);
-  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 70%;
+  width: 60%;
   padding: .1rem .5rem;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+}
+
+.form .socials img {
+  width: 60px;
+  height: 60px;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+}
+
+.form .socials a:hover,
+.form .socials img:hover {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+
+.signup-form {
+  width: 60%;
+}
+
+.signup-form .first-group {
+  display: flex;
+  gap: .5rem;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signup-form .first-group .img-container {
+  background-color: var(--white);
+  padding: .4rem .5rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.signup-form .first-group #camera {
+  width: 27px;
+  height: 25px;
+}
+
+.signup-form .second-group {
+  display: flex;
+  gap: .3rem;
+}
+
+.signup-form .second-group .primary-label input {
+  border-top-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-top-left-radius: 0;
+  -ms-border-top-left-radius: 0;
+  -o-border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-bottom-left-radius: 0;
+  -ms-border-bottom-left-radius: 0;
+  -o-border-bottom-left-radius: 0;
+}
+
+.signup-form select {
+  padding: 0 .5rem;
+  color: var(--text-purple);
+  width: 30%;
+  margin: .5rem 0;
+  border: none;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-top-right-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
+  -ms-border-top-right-radius: 0;
+  -o-border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+  -ms-border-bottom-right-radius: 0;
+  -o-border-bottom-right-radius: 0;
+}
+
+.signup-form select:focus {
+  outline: 2px solid var(--primary-color);
+  caret-color: var(--primary-color);
+}
+
+.signup-form .specialization {
+  width: 100%;
+  padding: .6rem 2.6rem .7rem;
+  margin: .5rem 0;
+  border: none;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -810,7 +925,27 @@ footer small:hover {
   -o-border-radius: 20px;
 }
 
-.login-form .socials img {
-  width: 60px;
-  height: 60px;
+.signup-form .specialization-wrapper {
+  position: relative;
+}
+
+.signup-form #stethoscope {
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem;
+  width: 24px;
+  height: 24px;
+}
+
+.signup-form .gender-group {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  color: var(--muted-purple);
+}
+
+.signup-form .gender-group h6 {
+  margin: 0;
 }
