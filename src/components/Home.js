@@ -32,6 +32,11 @@ export default function Home() {
                     </div>
                 </section>
                 <section className="services">
+                    <div className='services-text'>
+                        <h1>خدمات زهرة المميزة</h1>
+                        <p>نوفر لك أداة لتحليل البيانات الخاصة بمرضاك والحصول على أفضل النتائج </p>
+                        <Link to='/services' exact='true'><button className='primary-button'>اضغط لمعرفة المزيد</button></Link>
+                    </div>
                     <div className='services-list'>
                         <div className='services-item'>
                             <img src={network} alt='a network of people' />
@@ -49,11 +54,6 @@ export default function Home() {
                             <img src={diagnostic} alt='computer with a magnifying glass that has a heart rate on it' />
                             <h6>الوصول لتشخيص ادق بمساعدة الذكاء الاصطناعي</h6>
                         </div>
-                    </div>
-                    <div className='services-text'>
-                        <h1>خدمات زهرة المميزة</h1>
-                        <p>نوفر لك أداة لتحليل البيانات الخاصة بمرضاك والحصول على أفضل النتائج </p>
-                        <Link to='/services' exact='true'><button className='primary-button'>اضغط لمعرفة المزيد</button></Link>
                     </div>
                 </section>
                 <section className="subscriptions">

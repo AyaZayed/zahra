@@ -310,7 +310,7 @@ footer small:hover {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 3rem;
   margin: 0;
   text-align: center;
   vertical-align: middle;
@@ -370,12 +370,10 @@ footer small:hover {
   .services .services-list {
     flex-basis: 50%;
     grid-template-columns: repeat(2, 1fr);
-    order: 1;
   }
 
   .services .services-text {
-    flex-basis: 43%;
-    order: 2;
+    flex-basis: 40%;
   }
 }
 
@@ -550,7 +548,7 @@ footer small:hover {
   gap: 1rem;
   background-color: var(--muted-purple);
   color: var(--secondary-text-color);
-  margin: 1.5rem 0 3rem;
+  /* margin: 0; */
 }
 
 .app h3 {
