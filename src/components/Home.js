@@ -19,7 +19,7 @@ export default function Home() {
 
     return (
         <>
-            <Navbar />
+            <Navbar landing={true} />
             <main className='home-page'>
                 <section className="welcome">
                     <div className="welcome-text">
