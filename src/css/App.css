@@ -1072,3 +1072,160 @@ footer small:hover {
 .subscribe-form button {
   padding: .4rem 3rem .5rem;
 }
+
+.dashboard {
+  margin: 0;
+}
+
+.dashboard .features {
+  background-color: #871D63CC;
+  padding: 3rem 5rem 1rem;
+  color: var(--white);
+}
+
+.dashboard .features h6 {
+  margin: 0;
+}
+
+.dashboard .features .features-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard .features .features-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  text-align: center;
+}
+
+.dashboard .features .features-list .features-item {
+  background-color: var(--grey);
+  padding: 2rem;
+  border-radius: 25px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.dashboard .features .features-list .features-item:hover {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+
+.dashboard .features .features-list .features-item img {
+  width: 80px;
+  height: 80px;
+}
+
+@media (min-width: 768px) {
+  .dashboard .features {
+    padding-top: 7rem;
+  }
+
+  .dashboard .features .features-list {
+    width: fit-content;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+}
+
+.dashboard .appointments {
+  padding: 0 5rem 2rem;
+  color: var(--black);
+}
+
+.dashboard .appointments .heading-text {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard .appointments .heading-text a {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+.dashboard .appointments .appointments-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard .appointments .appointments-list {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.dashboard .appointments .appointments-list .appointments-item {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 25px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.dashboard .appointments .appointments-list .appointments-item .patient-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+  .dashboard .appointments .appointments-list {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.dashboard .appointments .appointments-list .appointments-item .patient-info {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  border-bottom: 1px solid var(--primary-color);
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.dashboard .appointments .appointments-list .appointments-item .patient-info h6 {
+  margin: 0;
+}
+
+.appointments-list .appointments-item .appointments-item-text {
+  color: var(--muted-purple);
+  padding-top: 1rem;
+}
+
+.appointments-list .appointments-item .appointments-item-text small {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .5rem;
+}
+
+.appointments-list .appointments-item .appointments-item-text img {
+  width: 22px;
+  height: 22px;
+}
