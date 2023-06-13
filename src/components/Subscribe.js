@@ -9,7 +9,7 @@ export default function Subscribe() {
     const price = ['50', '150', '300']
 
     return (
-        <div className='login-page form' >
+        <div className='login-page form subscribe' >
             <div className='login-image'>
                 <img src={loginImage} alt="login" />
             </div>

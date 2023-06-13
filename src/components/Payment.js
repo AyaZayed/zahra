@@ -11,14 +11,14 @@ export default function Payment() {
     const location = useLocation();
     const price = location.state;
 
-    const [method, setMethod] = useState([''])
+    const [method, setMethod] = useState('')
 
     function handlePaymentMethod(e) {
         setMethod(e.target.value)
     }
 
     return (
-        <div className='login-page form'>
+        <div className='login-page form payment'>
             <div className='login-image'>
                 <img src={loginImage} alt="login" />
             </div>
@@ -37,7 +37,7 @@ export default function Payment() {
                                         <small>+5 جنيه مصاريف فوري</small>
                                     </div>
                                 </label>
-                                <br></br>
+                                <hr></hr>
                                 <label>
                                     <input type="radio" name='payment' value='visa' onChange={handlePaymentMethod} />
                                     <img src={creditCard} alt='credit card' />
@@ -55,17 +55,19 @@ export default function Payment() {
                                         price === '300' ? 'اشتراك 90 يوم' : ''
 
                             }</h5>
-                            <br></br>
+                            <hr></hr>
                             <h6>المبلغ الكلي :</h6>
                             <small>
                                 EGP<span className='price'>{price}</span>
                             </small>
                         </div>
                     </div>
-                    <div className='payment-details'>
-                        {method === 'fawry' ? <Fawry />
-                            : method === 'visa' ? <Visa /> : ''}
-                    </div>
+                    {method ?
+                        <div className='payment-details'>
+                            {method === 'fawry' ? <Fawry />
+                                : method === 'visa' ? <Visa /> : ''}
+                        </div>
+                        : null}
                     <Link to='/dashboard' exact='true'>
                         <button className='primary-button'>تأكيد الإشتراك</button>
                     </Link>

@@ -643,7 +643,7 @@ footer small:hover {
 .login-page .login-image {
   background: url(../assets/illustorations/login-background.png) no-repeat center center/cover;
   order: 2;
-  height: 160vh;
+  height: 110vh;
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
@@ -712,12 +712,12 @@ footer small:hover {
 
   .login-page .login-text {
     flex-basis: 50%;
-    order: 2;
+    order: 1;
   }
 
   .login-page .login-image {
     flex-basis: 50%;
-    order: 1;
+    order: 2;
   }
 }
 
@@ -1072,6 +1072,199 @@ footer small:hover {
 .subscribe-form button {
   padding: .4rem 3rem .5rem;
 }
+
+.subscribe .login-image,
+.payment .login-image {
+  height: 122vh;
+}
+
+
+.payment-form .payment-choice {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--primary-color);
+  gap: 1rem;
+}
+
+.payment-form .payment-item {
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.payment-form .payment-item:first-child {
+  background-color: var(--white);
+  padding: 1.5rem 1.5rem 1rem;
+  text-align: right;
+}
+
+.payment-form .payment-item h6,
+.payment-form .payment-item h5 {
+  margin: 0;
+}
+
+.payment-form .payment-item h5 {
+  margin-bottom: .5rem;
+}
+
+.payment-form .payment-method label {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  text-align: right;
+  gap: .5rem;
+  color: var(--muted-purple);
+}
+
+.payment-form .payment-method hr {
+  border-top: 1px solid var(--text-purple);
+  width: 80%;
+}
+
+.payment-form .payment-method label img {
+  width: 40px;
+  height: 40px;
+}
+
+.payment-form .payment-method label .payment-method-text {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.payment-form .payment-method label .payment-method-text small {
+  color: var(--muted-purple);
+  margin-top: .5rem;
+}
+
+.payment-form .payment-item:nth-of-type(2) {
+  background-color: #6f6f6f1c;
+  padding: 1.5rem 2rem 1rem;
+  color: var(--text-purple);
+}
+
+.payment-form .payment-item:nth-of-type(2) h5 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.payment-form .payment-item:nth-of-type(2) h6 {
+  margin-bottom: 1rem;
+}
+
+.payment-form .payment-item:nth-of-type(2) small {
+  color: var(--text-purple);
+  font-size: 12.8px;
+}
+
+.payment-form .payment-item:nth-of-type(2) small .price {
+  font-weight: 700;
+  margin-left: .2rem;
+  font-size: 16px;
+}
+
+.payment-form .payment-details {
+  margin-top: 1rem;
+  background-color: var(--white);
+  border: 18px solid #DEDBD1;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.payment-form .payment-details .fawry h5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.payment-form .payment-details .fawry h5,
+.payment-form .payment-details .fawry h6 {
+  color: var(--primary-color);
+  margin: 1rem;
+}
+
+.payment-form .payment-details .fawry .time {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.payment-form .payment-details .fawry .time h6 {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: .5rem;
+  margin: 0 1rem 1rem;
+}
+
+.payment-form .payment-details .visa {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.payment-form .payment-details .visa .img-container {
+  background-color: #ECE8DDAD;
+  padding: 0 1rem;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  /* flex-basis: 40%; */
+}
+
+/* .payment-form .payment-details .visa .img-container img {
+  width: 120px;
+  height: 120px;
+} */
+
+.payment-form .payment-details .visa .visa-info {
+  /* flex-basis: 50%; */
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+.payment-form .payment-details .visa .visa-info input {
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  padding: .5rem;
+  color: var(--primary-color);
+}
+
+.payment-form .payment-details .visa .visa-info input::placeholder {
+  color: var(--primary-color);
+}
+
+.payment-form .payment-details .visa .visa-info input:focus {
+  outline: none;
+  caret-color: var(--primary-color);
+}
+
+.payment-form .payment-details .visa .visa-info label {
+  position: relative;
+}
+
+.payment-form .payment-details .visa .visa-info label span {
+  position: absolute;
+  top: .6rem;
+  left: 0;
+  color: var(--primary-color);
+}
+
+/* dashboard */
 
 .dashboard {
   margin: 0;
