@@ -8,7 +8,7 @@ import chat from '../assets/icons/chat.png'
 import diagnosis from '../assets/icons/diagnosis.png'
 import location from '../assets/icons/location.png'
 import time from '../assets/icons/time.png'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function Dashboard() {
     const [user, setUser] = useState('ماهر')
@@ -44,30 +44,30 @@ export default function Dashboard() {
                         نتمنى لك يوماََ لطيفاََ ^-^</p>
                     <div className='features-wrapper'>
                         <div className='features-list'>
-                            <Link to='/dashboard/appointments' exact='true'>
+                            <NavLink to='/appointments' exact='true'>
                                 <div className='features-item'>
                                     <img src={appointment} alt='appointment timetable' />
                                     <h6>الحجوزات</h6>
                                 </div>
-                            </Link>
-                            <Link to='/dashboard/patients' exact='true'>
+                            </NavLink>
+                            <NavLink to='/patients' exact='true'>
                                 <div className='features-item'>
                                     <img src={medicalReport} alt='medical report' />
                                     <h6>قائمة المرضى</h6>
                                 </div>
-                            </Link>
-                            <Link to='/dashboard/chat' exact='true'>
+                            </NavLink>
+                            <NavLink to='/chat' exact='true'>
                                 <div className='features-item'>
                                     <img src={chat} alt='chat' />
                                     <h6>المحادثات</h6>
                                 </div>
-                            </Link>
-                            <Link to='/dashboard/diagnosis' exact='true'>
+                            </NavLink>
+                            <NavLink to='/diagnosis' exact='true'>
                                 <div className='features-item'>
                                     <img src={diagnosis} alt='diagnosis tool' />
                                     <h6>أداة الفحص</h6>
                                 </div>
-                            </Link>
+                            </NavLink>
                         </div>
                     </div>
                 </div>

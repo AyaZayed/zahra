@@ -5,6 +5,7 @@ import LoginPage from './components/LoginPage'
 import Subscribe from './components/Subscribe'
 import Payment from './components/Payment'
 import Dashboard from './components/Dashboard'
+import Chat from './components/Chat'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/subscribe" element={<Subscribe />} />
         <Route path='/payment' element={<Payment />} />
         <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/dashboard/chat' element={<Chat />} />
       </Routes>
     </>
   )
