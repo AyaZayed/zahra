@@ -645,7 +645,7 @@ footer small:hover {
 .login-page .login-image {
   background: url(../assets/illustorations/login-background.png) no-repeat center center/cover;
   order: 2;
-  height: 110vh;
+  height: 115vh;
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
@@ -1075,11 +1075,13 @@ footer small:hover {
   padding: .4rem 3rem .5rem;
 }
 
-.subscribe .login-image,
-.payment .login-image {
+.subscribe .login-image {
   height: 122vh;
 }
 
+.payment .login-image {
+  height: 112vh;
+}
 
 .payment-form .payment-choice {
   display: flex;
@@ -1566,7 +1568,7 @@ footer small:hover {
 }
 
 .chat-page .chat .chats .chats-search input {
-  width: 79%;
+  width: 100%;
   background-color: var(--grey);
   padding: .8rem 3.5rem .9rem;
   margin: .5rem 0;
@@ -1670,7 +1672,7 @@ footer small:hover {
 .chat-page .chat .chat-form form input {
   width: 100%;
   background-color: var(--muted-purple);
-  padding: .8rem 3.5rem .9rem;
+  padding: 1.4rem 2.5rem;
   margin: .5rem 0;
   border: none;
   border-radius: 25px;
@@ -1698,30 +1700,29 @@ footer small:hover {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  height: 45px;
-  width: 80px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  padding: .6rem .8rem;
 }
 
 .chat-page .chat .chat-form form #pin {
   position: absolute;
-  top: -7px;
-  right: 4.5rem;
+  top: -5px;
+  right: 4rem;
   width: 20px;
-  height: 34px;
+  height: 30px;
 }
 
 .chat-page .chat .chat-form form button:first-child img {
-  width: 25px;
-  height: 33px;
+  width: 20px;
+  height: 25px;
 }
 
 .chat-page .chat .chat-form form button:last-child img {
-  width: 30px;
-  height: 30.58px;
+  width: 20px;
+  height: 25px;
 }
 
 .chat-page .chat .chat-form .messages {

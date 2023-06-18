@@ -9,6 +9,7 @@ import diagnosis from '../assets/icons/diagnosis.png'
 import location from '../assets/icons/location.png'
 import time from '../assets/icons/time.png'
 import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Dashboard() {
     const [user, setUser] = useState('ماهر')

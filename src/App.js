@@ -16,7 +16,7 @@ export default function App() {
         <Route path="/subscribe" element={<Subscribe />} />
         <Route path='/payment' element={<Payment />} />
         <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/dashboard/chat' element={<Chat />} />
+        <Route path='/chat' element={<Chat />} />
       </Routes>
     </>
   )
