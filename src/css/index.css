@@ -6,7 +6,7 @@
 
 :root {
   /* font stuff */
-  --font-size-basis: 1rem;
+  --font-size-basis: 1.2rem;
   --type-scale: 1.2;
   --h6: var(--font-size-basis);
   --h5: calc(var(--h6) * var(--type-scale));
@@ -47,6 +47,10 @@ a {
   text-decoration: none;
 }
 
+input {
+  box-sizing: border-box;
+}
+
 h1 {
   font-size: var(--h1);
   margin: 0;
@@ -70,6 +74,11 @@ h5 {
 
 h6 {
   font-size: var(--h6);
+  font-weight: normal;
+}
+
+p {
+  font-size: var(--font-size-basis);
 }
 
 small {
