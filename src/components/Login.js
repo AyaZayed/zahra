@@ -14,7 +14,7 @@ export default function Login() {
                 <div className='first-group'>
                     <label className='primary-label'>
                         <img src={user} alt='user' className='icon' />
-                        <input classname='primary-input' type="text" placeholder='أدخل اسمك الكامل' />
+                        <input className='primary-input' type="text" placeholder='أدخل اسمك الكامل' />
                     </label>
                     <label className='primary-label'>
                         <img src={lock} alt='lock' className='icon' />

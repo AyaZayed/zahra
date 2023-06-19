@@ -14,90 +14,97 @@ import { Link } from 'react-router-dom'
 export default function Dashboard() {
     const [user, setUser] = useState('ماهر')
     const [appointments, setAppointments] = useState([{
-        patient: 'كريم الموجي',
-        patientImage: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=876&q=80',
+        id: '1',
+        patientName: 'كريم الموجي',
+        patientImg: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=876&q=80',
         location: 'العيادة',
-        date: 'الأحد 8 يناير',
+        date: { day: 20, month: 'يونيو', year: 2023 },
         time: '10:00 صباحاََ',
     },
     {
-        patient: 'كريم الموجي',
-        patientImage: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=876&q=80',
+        id: '2',
+        patientName: 'كريم الموجي',
+        patientImg: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=876&q=80',
         location: 'العيادة',
-        date: 'الأحد 8 يناير',
+        date: { day: 20, month: 'يونيو', year: 2023 },
         time: '10:00 صباحاََ',
     },
     {
-        patient: 'كريم الموجي',
-        patientImage: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=876&q=80',
+        id: '3',
+        patientName: 'كريم الموجي',
+        patientImg: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=876&q=80',
         location: 'العيادة',
-        date: 'الأحد 8 يناير',
+        date: { day: 20, month: 'يونيو', year: 2023 },
+        time: '10:00 صباحاََ',
+    },
+    {
+        id: '4',
+        patientName: 'كريم الموجي',
+        patientImg: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=876&q=80',
+        location: 'العيادة',
+        date: { day: 21, month: 'يونيو', year: 2023 },
         time: '10:00 صباحاََ',
     }
     ])
     return (
-        <>
-            <Navbar landing={false} />
-            <main className='dashboard'>
-                <div className='features'>
-                    <h6>مرحباََ , {user}.</h6>
-                    <p>
-                        نتمنى لك يوماََ لطيفاََ ^-^</p>
-                    <div className='features-wrapper'>
-                        <div className='features-list'>
-                            <NavLink to='/appointments' exact='true'>
-                                <div className='features-item'>
-                                    <img src={appointment} alt='appointment timetable' />
-                                    <h6>الحجوزات</h6>
-                                </div>
-                            </NavLink>
-                            <NavLink to='/patients' exact='true'>
-                                <div className='features-item'>
-                                    <img src={medicalReport} alt='medical report' />
-                                    <h6>قائمة المرضى</h6>
-                                </div>
-                            </NavLink>
-                            <NavLink to='/chat' exact='true'>
-                                <div className='features-item'>
-                                    <img src={chat} alt='chat' />
-                                    <h6>المحادثات</h6>
-                                </div>
-                            </NavLink>
-                            <NavLink to='/diagnosis' exact='true'>
-                                <div className='features-item'>
-                                    <img src={diagnosis} alt='diagnosis tool' />
-                                    <h6>أداة الفحص</h6>
-                                </div>
-                            </NavLink>
-                        </div>
+        <main className='dashboard'>
+            <div className='features'>
+                <h6>مرحباََ , {user}.</h6>
+                <p>
+                    نتمنى لك يوماََ لطيفاََ ^-^</p>
+                <div className='features-wrapper'>
+                    <div className='features-list'>
+                        <NavLink to='/dashboard/appointments' exact='true' state={appointments}>
+                            <div className='features-item'>
+                                <img src={appointment} alt='appointment timetable' />
+                                <h6>الحجوزات</h6>
+                            </div>
+                        </NavLink>
+                        <NavLink to='/dashboard/patients' exact='true'>
+                            <div className='features-item'>
+                                <img src={medicalReport} alt='medical report' />
+                                <h6>قائمة المرضى</h6>
+                            </div>
+                        </NavLink>
+                        <NavLink to='/dashboard/chat' exact='true'>
+                            <div className='features-item'>
+                                <img src={chat} alt='chat' />
+                                <h6>المحادثات</h6>
+                            </div>
+                        </NavLink>
+                        <NavLink to='/dashboard/diagnosis' exact='true'>
+                            <div className='features-item'>
+                                <img src={diagnosis} alt='diagnosis tool' />
+                                <h6>أداة الفحص</h6>
+                            </div>
+                        </NavLink>
                     </div>
                 </div>
-                <div className='appointments'>
-                    <div className='heading-text'>
-                        <h6>مواعيد قريبة</h6>
-                        <Link to='/dashboard/appointments' exact='true'>المزيد</Link>
-                    </div>
-                    <div className='appointments-wrapper'>
-                        <div className='appointments-list'>
-                            {appointments.map((appointment, index) => {
-                                return (
-                                    <div className='appointments-item' key={index}>
-                                        <div className='patient-info'>
-                                            <img src={appointment.patientImage} alt='patient' />
-                                            <h6>{appointment.patient}</h6>
-                                        </div>
-                                        <div className='appointments-item-text'>
-                                            <small><img src={location} alt='location pin' />{appointment.location}</small>
-                                            <small><img src={time} alt='clock' />{appointment.date} {appointment.time}</small>
-                                        </div>
+            </div>
+            <div className='appointments'>
+                <div className='heading-text'>
+                    <h6>مواعيد قريبة</h6>
+                    <Link to='/dashboard/appointments' exact='true'>المزيد</Link>
+                </div>
+                <div className='appointments-wrapper'>
+                    <div className='appointments-list'>
+                        {appointments.map((appointment, index) => {
+                            return (
+                                <div className='appointments-item' key={index}>
+                                    <div className='patient-info'>
+                                        <img src={appointment.patientImg} alt='patient' />
+                                        <h6>{appointment.patientName}</h6>
                                     </div>
-                                )
-                            })}
-                        </div>
+                                    <div className='appointments-item-text'>
+                                        <small><img src={location} alt='location pin' />{appointment.location}</small>
+                                        <small><img src={time} alt='clock' />{appointment.date.day} {appointment.date.month} {appointment.date.year} {appointment.time}</small>
+                                    </div>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
-            </main>
-            <Footer />
-        </>
+            </div>
+        </main>
     )
 }
