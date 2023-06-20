@@ -1815,11 +1815,13 @@ footer small:hover {
 }
 
 /* appointments page */
-.appointments-page {
+.appointments-page,
+.patients-page {
   padding-top: 4rem;
 }
 
-.appointments-page .sidebar {
+.appointments-page .sidebar,
+.patients-page .sidebar {
   top: 8.9rem;
 }
 
@@ -1830,7 +1832,8 @@ footer small:hover {
   align-items: center;
 }
 
-.appointments-page .appointments-nav {
+.appointments-page .appointments-nav,
+.patients-page .patients-nav {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -1840,7 +1843,13 @@ footer small:hover {
   padding: 2rem 6rem 0;
 }
 
-.appointments-page .appointments-nav h6 {
+.patients-page .patients-nav {
+  justify-content: flex-end;
+  padding-bottom: 1.7rem;
+}
+
+.appointments-page .appointments-nav h6,
+.patients-nav .patients-nav h6 {
   padding-bottom: 1.5rem;
 }
 
@@ -1849,7 +1858,8 @@ footer small:hover {
   border-bottom: 3px solid var(--primary-color);
 }
 
-.appointments-page .appointments-nav .profile {
+.appointments-page .appointments-nav .profile,
+.patients-page .patients-nav .profile {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -1858,7 +1868,8 @@ footer small:hover {
   position: relative;
 }
 
-.appointments-page .appointments-nav .profile img {
+.appointments-page .appointments-nav .profile img,
+.patients-page .patients-nav .profile img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -1871,7 +1882,8 @@ footer small:hover {
   left: -50px;
 }
 
-.appointments-page .appointments-nav .profile .default-img {
+.appointments-page .appointments-nav .profile .default-img,
+.patients-page .patients-nav .profile .default-img {
   width: 33px;
   height: 33px;
   background-color: var(--light-grey);
@@ -2007,12 +2019,14 @@ footer small:hover {
   gap: 1rem;
   min-height: 50vh;
   padding-left: 2rem;
+  margin-bottom: 2rem;
 }
 
 .appointments-page .appointments .appointments-item {
   background-color: var(--muted-grey);
   font-family: var(--third-font-family);
   color: var(--black);
+  padding: 1.3rem 1.5rem .8rem;
 }
 
 .appointments-page .appointments .appointments-item .img-container {
@@ -2029,11 +2043,6 @@ footer small:hover {
   gap: .5rem;
 }
 
-.appointments-page .appointments .appointments-item #date {
-  font-size: 10.24px;
-  color: var(--muted-purple);
-}
-
 .appointments-page .appointments .appointments-item button {
   background-color: var(--muted-purple);
   color: var(--white);
@@ -2048,6 +2057,15 @@ footer small:hover {
   -moz-transition: all .3s ease;
   -ms-transition: all .3s ease;
   -o-transition: all .3s ease;
+}
+
+.appointments-page .appointments .appointments-item button:hover {
+  background-color: var(--white);
+  color: var(--muted-purple);
+}
+
+.appointments-page .appointments .appointments-item small {
+  margin-bottom: 1.2rem;
 }
 
 @media (min-width:768px) {

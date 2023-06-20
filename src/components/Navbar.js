@@ -17,7 +17,7 @@ export default function Navbar({ landing }) {
                     <img src={logo} alt="zahra name and logo" />
                 </Link>
                 <ul>
-                    <li><Link to='/' exact='true'>الصفحة الرئيسية</Link></li>
+                    <li><Link to={`${landing ? "/" : "/dashboard"}`} exact='true'>الصفحة الرئيسية</Link></li>
                     <li><Link to='/contact'>تواصل معنا </Link></li>
                     {landing ?
                         (<>
