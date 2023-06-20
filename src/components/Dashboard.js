@@ -1,6 +1,4 @@
 import React from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
 import { useState } from 'react'
 import appointment from '../assets/icons/appointment.png'
 import medicalReport from '../assets/icons/medical-reports.png'
@@ -20,6 +18,9 @@ export default function Dashboard() {
         location: 'العيادة',
         date: { day: 20, month: 'يونيو', year: 2023 },
         time: '10:00 صباحاََ',
+        age: 20,
+        hasPaid: true,
+        payment: 100,
     },
     {
         id: '2',
@@ -28,6 +29,9 @@ export default function Dashboard() {
         location: 'العيادة',
         date: { day: 20, month: 'يونيو', year: 2023 },
         time: '10:00 صباحاََ',
+        age: 20,
+        hasPaid: true,
+        payment: 100,
     },
     {
         id: '3',
@@ -36,6 +40,9 @@ export default function Dashboard() {
         location: 'العيادة',
         date: { day: 20, month: 'يونيو', year: 2023 },
         time: '10:00 صباحاََ',
+        age: 20,
+        hasPaid: true,
+        payment: 100,
     },
     {
         id: '4',
@@ -44,8 +51,17 @@ export default function Dashboard() {
         location: 'العيادة',
         date: { day: 21, month: 'يونيو', year: 2023 },
         time: '10:00 صباحاََ',
+        age: 20,
+        hasPaid: true,
+        payment: 100,
     }
     ])
+
+    const sayHi = () => {
+        console.log('hi')
+    }
+
+
     return (
         <main className='dashboard'>
             <div className='features'>
@@ -54,13 +70,13 @@ export default function Dashboard() {
                     نتمنى لك يوماََ لطيفاََ ^-^</p>
                 <div className='features-wrapper'>
                     <div className='features-list'>
-                        <NavLink to='/dashboard/appointments' exact='true' state={appointments}>
+                        <NavLink to={'/dashboard/appointments'} state={appointments} exact='true' >
                             <div className='features-item'>
                                 <img src={appointment} alt='appointment timetable' />
                                 <h6>الحجوزات</h6>
                             </div>
                         </NavLink>
-                        <NavLink to='/dashboard/patients' exact='true'>
+                        <NavLink to='/dashboard/patients' state={sayHi} exact='true'>
                             <div className='features-item'>
                                 <img src={medicalReport} alt='medical report' />
                                 <h6>قائمة المرضى</h6>
@@ -88,9 +104,9 @@ export default function Dashboard() {
                 </div>
                 <div className='appointments-wrapper'>
                     <div className='appointments-list'>
-                        {appointments.map((appointment, index) => {
+                        {appointments.map((appointment) => {
                             return (
-                                <div className='appointments-item' key={index}>
+                                <div className='appointments-item' key={appointment.id}>
                                     <div className='patient-info'>
                                         <img src={appointment.patientImg} alt='patient' />
                                         <h6>{appointment.patientName}</h6>

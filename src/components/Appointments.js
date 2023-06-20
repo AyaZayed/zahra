@@ -4,6 +4,10 @@ import Sidebar from './Sidebar'
 import { Link, useLocation } from 'react-router-dom';
 import refresh from '../assets/icons/refresh.png'
 import search from '../assets/icons/purple-search.png'
+import locationPin from '../assets/icons/location.png'
+import money from '../assets/icons/money.png'
+import circle from '../assets/icons/circle.png'
+
 
 export default function Appointments() {
     const user = {
@@ -36,13 +40,24 @@ export default function Appointments() {
         year: today.year
     });
 
-    const shownAppointments = showAll ? appointments : appointments.filter(appointment => {
-        return appointment.date.day == pickedDate.day &&
-            appointment.date.month == pickedDate.month &&
-            appointment.date.year == pickedDate.year;
-    });
+    const [shownAppointments, setShownAppointments] = useState(appointments);
 
-    console.log(shownAppointments);
+    useEffect(() => {
+        if (showAll) {
+            setShownAppointments(appointments)
+        }
+        else {
+            appointments.filter((appointment) => {
+                return appointment.date.day === pickedDate.day &&
+                    appointment.date.month === pickedDate.month &&
+                    appointment.date.year === pickedDate.year
+            })
+        }
+    }, [appointments, pickedDate, showAll])
+
+    function deleteAppointment(id) {
+        setShownAppointments(shownAppointments.filter(appointment => appointment.id !== id))
+    }
 
     return (
         <main className='appointments-page'>
@@ -96,17 +111,28 @@ export default function Appointments() {
                 </div>
                 {isSearching && <input type='text' name='search' id='search' placeholder='بحث...' />}
                 <div className='appointments'>
-                    {shownAppointments.map(appointment => {
+                    {shownAppointments ? shownAppointments.map(appointment => {
                         return (
-                            <div className='appointment' key={appointment.id}>
-                                {/* {appointment.patientImg && <img src={appointment.patientImg} alt='patient' />} */}
-                                <div className='appointment-info'>
-                                    <h6>{appointment.patientName}</h6>
-                                    <small>{appointment.date.day} {appointment.date.month} {appointment.date.year}</small>
+                            <div className='appointments-item' key={appointment.id}>
+                                <div className='patient-info'>
+                                    <div className='img-container'>
+                                        <img src={appointment.patientImg} alt='patient' />
+                                        <h6>{appointment.patientName}</h6>
+                                    </div>
+                                    <div className='cancel-wrapper'>
+                                        <small id='date'>{appointment.date.day} {appointment.date.month} {appointment.date.year} {appointment.time}</small>
+                                        <button className='cancel-btn' onClick={() => deleteAppointment(appointment.id)} >إلغاء الحجز</button>
+                                    </div>
+                                </div>
+                                <div className='appointments-item-text'>
+                                    <small><img src={circle} alt='hollow circle' />{appointment.age}</small>
+                                    <small><img src={locationPin} alt='location pin' />موعد ب{appointment.location}</small>
+                                    {appointment.hasPaid && <small><img src={money} alt='money' />تم استلام : {appointment.payment} جنيه</small>}
                                 </div>
                             </div>
                         )
-                    })}
+                    })
+                        : <p>لا توجد مواعيد</p>}
                 </div>
             </div>
         </main>

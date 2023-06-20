@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard'
 import Chat from './components/Chat'
 import Appointments from './components/Appointments'
 import Layout from './components/Layout'
+import Patients from './components/Patients'
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           <Route index element={<Dashboard />} />
           <Route path='/dashboard/chat' element={<Chat />} />
           <Route path='/dashboard/appointments' element={<Appointments />} />
+          <Route path='/dashboard/patients' element={<Patients />} />
         </Route>
       </Routes>
     </>
