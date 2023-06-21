@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import userImg from '../assets/icons/user.png'
 import Sidebar from './Sidebar'
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import refresh from '../assets/icons/refresh.png'
 import search from '../assets/icons/purple-search.png'
-import locationPin from '../assets/icons/location.png'
-import money from '../assets/icons/money.png'
-import circle from '../assets/icons/circle.png'
-import clock from '../assets/icons/time.png'
+import Appointment from './Appointment';
 
 export default function Appointments() {
     const user = {
@@ -101,7 +98,7 @@ export default function Appointments() {
     }, [showAll, pickedDate, appointments])
 
 
-    const deleteAppointment = (id) => {
+    function deleteAppointment(id) {
         setAppointments(appointments.filter(appointment => appointment.id !== id))
     }
 
@@ -165,26 +162,8 @@ export default function Appointments() {
                 <div className='appointments'>
                     {shownAppointments.length !== 0 ? shownAppointments.map(appointment => {
                         return (
-                            <div className='appointments-item' key={appointment.id} >
-                                <div className='patient-info'>
-                                    <div className='img-container'>
-                                        <img src={appointment.patientImg} alt='patient' />
-                                        <h6>{appointment.patientName}</h6>
-                                    </div>
-                                    <div className='cancel-wrapper'>
-                                        <button className='cancel-btn' onClick={() => deleteAppointment(appointment.id)} >إلغاء الحجز</button>
-                                    </div>
-                                </div>
-                                <div className='appointments-item-text'>
-                                    <small><img src={circle} alt='hollow circle' />{appointment.age} سنة</small>
-                                    <small><img src={locationPin} alt='location pin' />موعد ب{appointment.location}</small>
-                                    {appointment.hasPaid && <small><img src={money} alt='money' />تم استلام : {appointment.payment} جنيه</small>}
-                                    <small>
-                                        <img src={clock} alt='clock' />
-                                        {appointment.date.day} {appointment.date.month} {appointment.date.year} {appointment.time}
-                                    </small>
-                                </div>
-                            </div>)
+                            <Appointment key={appointment.id} appointment={appointment} deleteAppointment={deleteAppointment} />
+                        )
                     }) : <h5>لا توجد مواعيد</h5>}
                 </div>
             </div>

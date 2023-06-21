@@ -8,6 +8,7 @@ import location from '../assets/icons/location.png'
 import time from '../assets/icons/time.png'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import Appointment from './Appointment'
 
 export default function Dashboard() {
     const [user, setUser] = useState('ماهر')
@@ -103,16 +104,7 @@ export default function Dashboard() {
                         {/* limit appointments to 3 */}
                         {appointments.slice(0, 3).map((appointment) => {
                             return (
-                                <div className='appointments-item' key={appointment.id}>
-                                    <div className='patient-info'>
-                                        <img src={appointment.patientImg} alt='patient' />
-                                        <h6>{appointment.patientName}</h6>
-                                    </div>
-                                    <div className='appointments-item-text'>
-                                        <small><img src={location} alt='location pin' />{appointment.location}</small>
-                                        <small><img src={time} alt='clock' />{appointment.date.day} {appointment.date.month} {appointment.date.year} {appointment.time}</small>
-                                    </div>
-                                </div>
+                                <Appointment key={appointment.id} appointment={appointment} dashboard={true} />
                             )
                         })}
                     </div>

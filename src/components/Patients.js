@@ -25,7 +25,7 @@ export default function Patients() {
             gender: 'ذكر',
             phone: '01000000000',
             email: 'karim@example.com',
-            appointments: [
+            patientAppointments: [
                 {
                     id: '1',
                     date: new Date(),
@@ -56,7 +56,7 @@ export default function Patients() {
             gender: 'ذكر',
             phone: '01000000000',
             email: 'mo@example.com',
-            appointments: [
+            patientAppointments: [
                 {
                     id: '2',
                     date: new Date(),
@@ -88,7 +88,7 @@ export default function Patients() {
             gender: 'ذكر',
             phone: '01000000000',
             email: 'ahmed@example.com',
-            appointments: [
+            patientAppointments: [
                 {
                     id: '3',
                     date: new Date(),
@@ -120,7 +120,7 @@ export default function Patients() {
             gender: 'أنثى',
             phone: '01000000000',
             email: 'zainab@example.com',
-            appointments: [
+            patientAppointments: [
                 {
                     id: '4',
                     date: new Date(),
@@ -152,7 +152,7 @@ export default function Patients() {
             gender: 'أنثى',
             phone: '01000000000',
             email: 'jamilah@example.com',
-            appointments: [
+            patientAppointments: [
                 {
                     id: '5',
                     date: new Date(),
@@ -184,7 +184,7 @@ export default function Patients() {
             gender: 'ذكر',
             phone: '01000000000',
             email: 'karim@example.com',
-            appointments: [
+            patientAppointments: [
                 {
                     id: '6',
                     date: new Date(),
@@ -215,7 +215,7 @@ export default function Patients() {
             gender: 'ذكر',
             phone: '01000000000',
             email: 'mo@example.com',
-            appointments: [
+            patientAppointments: [
                 {
                     id: '7',
                     date: new Date(),
@@ -247,7 +247,7 @@ export default function Patients() {
             gender: 'ذكر',
             phone: '01000000000',
             email: 'ahmed@example.com',
-            appointments: [
+            patientAppointments: [
                 {
                     id: '8',
                     date: new Date(),
@@ -279,7 +279,7 @@ export default function Patients() {
             gender: 'أنثى',
             phone: '01000000000',
             email: 'zainab@example.com',
-            appointments: [
+            patientAppointments: [
                 {
                     id: '9',
                     date: new Date(),
@@ -311,7 +311,7 @@ export default function Patients() {
             gender: 'أنثى',
             phone: '01000000000',
             email: 'jamilah@example.com',
-            appointments: [
+            patientAppointments: [
                 {
                     id: '10',
                     date: new Date(),
@@ -371,7 +371,7 @@ export default function Patients() {
             phone: patient.phone,
             img: '',
             email: patient.email,
-            appointments: [{
+            patientAppointments: [{
                 id: String(patients.length + 1),
                 date: { day: '', month: '', year: '' },
                 time: '',
@@ -469,13 +469,13 @@ export default function Patients() {
                                         <td>{patient.age || 'X'}</td>
                                         <td className='appointment'>
                                             <h6>
-                                                {patient.appointments[0].location === 'clinic' ?
+                                                {patient.patientAppointments[0].location === 'clinic' ?
                                                     <img src={location} alt='clinic' className='location' /> :
-                                                    patient.appointments[0].location === 'phone' ?
+                                                    patient.patientAppointments[0].location === 'phone' ?
                                                         <img src={phone} alt='phone' className='location' /> : null}
                                                 {
                                                     // check if there is an appointment
-                                                    patient.appointments[0].dateText ? patient.appointments[0].dateText :
+                                                    patient.patientAppointments[0].dateText ? patient.patientAppointments[0].dateText :
                                                         'X'
                                                 }
                                             </h6>
@@ -501,9 +501,14 @@ export default function Patients() {
                                                     <img src={chat} alt='go to chat page' />
                                                 </Link>
 
-                                                <img onClick={() => setEditPatientModal(true)} id='dots' src={dots} alt='go to settings page' />
+                                                <img src={dots} alt='more options' onClick={() => setEditPatientModal(true)} id='dots' />
                                                 {editPatientModal && (
-                                                    <EditPatient setIsModalOpen={setEditPatientModal} addPatient={editPatient} patient={patient} />
+                                                    <EditPatient
+                                                        isModalOpen={editPatientModal}
+                                                        setIsModalOpen={setEditPatientModal}
+                                                        editPatient={editPatient}
+                                                        patient={patient}
+                                                    />
                                                 )}
                                             </h6>
                                         </td>

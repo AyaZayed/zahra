@@ -25,7 +25,7 @@ export default function AddPatient({ setIsModalOpen, addPatient }) {
     })
 
     return (
-        <div className='overlay'>
+        <div className='add-patient overlay'>
             <div className='modal'>
                 <button id='x' onClick={() => setIsModalOpen(false)}>X</button>
                 <form onSubmit={(e) => addPatient(e, inputs)}>

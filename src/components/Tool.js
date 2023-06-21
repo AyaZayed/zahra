@@ -36,7 +36,7 @@ export default function Tool() {
             </nav>
             <Sidebar />
             <div className='tool-content' style={{ padding: '6rem' }}>
-                <h6>رجاءاً إضافة الملفات بالامتدادت التالية فقط :</h6>
+                <h6>رجاء إضافة الملفات بالامتدادت التالية فقط :</h6>
                 <ul>
                     <li>-.fasta</li>
                     <li>-.fastq</li>
@@ -55,7 +55,7 @@ export default function Tool() {
                             />
                         </label>
                     </div>
-                    <button className='primary-btn'>تحليل الملف <img src={download} alt='arrow down' /></button>
+                    <button className='primary-button'>تحليل الملف <img src={download} alt='arrow down' /></button>
                 </form>
             </div>
         </div>

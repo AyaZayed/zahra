@@ -47,14 +47,14 @@ export default function Diagnosis() {
                 </Link>
             </nav>
             <Sidebar />
-            <form className='diagnosis-content' style={{ padding: '6rem' }}
+            <form className='diagnosis-content'
                 onSubmit={(e) => {
                     e.preventDefault();
                     // redirect to diagnosis tool page
                     window.location.href = `/dashboard/diagnosis/tool?patient=${selectedPatient}&type=${diagnosisType}`
                 }}>
                 <img src={zahra} alt='zahra logo' className='zahra-logo' />
-                <label>
+                <label className='input-section primary-label'>
                     <img src={search} alt='search' />
                     <select className='primary-select' onChange={(e) => setSelectedPatient(e.target.value)}>
                         <option>أدخل اسم المريض ...</option>
@@ -63,9 +63,9 @@ export default function Diagnosis() {
                 </label>
                 <h6>اختر نوع الفحص </h6>
                 <div className='diagnosis-types'>
-                    <button type='submit' className='diagnosis-type' onClick={(e) => setDiagnosisType('CSD')}>CSD</button>
-                    <button type='submit' className='diagnosis-type' onClick={(e) => setDiagnosisType('Pathology')}>Pathology</button>
-                    <button type='submit' className='diagnosis-type' onClick={(e) => setDiagnosisType('DNA')}>DNA</button>
+                    <button type='submit' className='primary-button diagnosis-type' onClick={(e) => setDiagnosisType('CSD')}>CSD</button>
+                    <button type='submit' className='primary-button diagnosis-type' onClick={(e) => setDiagnosisType('Pathology')}>Pathology</button>
+                    <button type='submit' className='primary-button diagnosis-type' onClick={(e) => setDiagnosisType('DNA')}>DNA</button>
                 </div>
             </form>
         </div >
