@@ -13,6 +13,7 @@ import chat from '../assets/icons/chat.png'
 import dots from '../assets/icons/dots.png'
 import plus from '../assets/icons/plus.png'
 import AddPatient from './AddPatient';
+import EditPatient from './EditPatient';
 
 export default function Patients() {
     const patientsData = [
@@ -27,8 +28,8 @@ export default function Patients() {
             appointments: [
                 {
                     id: '1',
-                    date: { day: 20, month: 'يونيو', year: 2023 },
-                    time: '10:00 صباحاََ',
+                    date: new Date(),
+                    dateText: '20 يونيو 2021 10:00 صباحاََ',
                     location: 'clinic',
                 }
             ],
@@ -58,8 +59,8 @@ export default function Patients() {
             appointments: [
                 {
                     id: '2',
-                    date: { day: 20, month: 'يونيو', year: 2023 },
-                    time: '10:00 صباحاََ',
+                    date: new Date(),
+                    dateText: '20 يونيو 2021 10:00 صباحاََ',
                     location: 'phone',
                 }
             ],
@@ -90,8 +91,8 @@ export default function Patients() {
             appointments: [
                 {
                     id: '3',
-                    date: { day: 20, month: 'يونيو', year: 2023 },
-                    time: '10:00 صباحاََ',
+                    date: new Date(),
+                    dateText: '20 يونيو 2021 10:00 صباحاََ',
                     location: 'phone',
                 }
             ],
@@ -122,8 +123,8 @@ export default function Patients() {
             appointments: [
                 {
                     id: '4',
-                    date: { day: 20, month: 'يونيو', year: 2023 },
-                    time: '10:00 صباحاََ',
+                    date: new Date(),
+                    dateText: '20 يونيو 2021 10:00 صباحاََ',
                     location: 'clinic',
                 }
             ],
@@ -154,8 +155,8 @@ export default function Patients() {
             appointments: [
                 {
                     id: '5',
-                    date: { day: 20, month: 'يونيو', year: 2023 },
-                    time: '10:00 صباحاََ',
+                    date: new Date(),
+                    dateText: '20 يونيو 2021 10:00 صباحاََ',
                     location: 'phone',
                 }
             ],
@@ -186,8 +187,8 @@ export default function Patients() {
             appointments: [
                 {
                     id: '6',
-                    date: { day: 20, month: 'يونيو', year: 2023 },
-                    time: '10:00 صباحاََ',
+                    date: new Date(),
+                    dateText: '20 يونيو 2021 10:00 صباحاََ',
                     location: 'clinic',
                 }
             ],
@@ -217,8 +218,8 @@ export default function Patients() {
             appointments: [
                 {
                     id: '7',
-                    date: { day: 20, month: 'يونيو', year: 2023 },
-                    time: '10:00 صباحاََ',
+                    date: new Date(),
+                    dateText: '20 يونيو 2021 10:00 صباحاََ',
                     location: 'phone',
                 }
             ],
@@ -249,8 +250,8 @@ export default function Patients() {
             appointments: [
                 {
                     id: '8',
-                    date: { day: 20, month: 'يونيو', year: 2023 },
-                    time: '10:00 صباحاََ',
+                    date: new Date(),
+                    dateText: '20 يونيو 2021 10:00 صباحاََ',
                     location: 'phone',
                 }
             ],
@@ -281,8 +282,8 @@ export default function Patients() {
             appointments: [
                 {
                     id: '9',
-                    date: { day: 20, month: 'يونيو', year: 2023 },
-                    time: '10:00 صباحاََ',
+                    date: new Date(),
+                    dateText: '20 يونيو 2021 10:00 صباحاََ',
                     location: 'clinic',
                 }
             ],
@@ -313,8 +314,8 @@ export default function Patients() {
             appointments: [
                 {
                     id: '10',
-                    date: { day: 20, month: 'يونيو', year: 2023 },
-                    time: '10:00 صباحاََ',
+                    date: new Date(),
+                    dateText: '20 يونيو 2021 10:00 صباحاََ',
                     location: 'phone',
                 }
             ],
@@ -344,6 +345,7 @@ export default function Patients() {
     const [currentPage, setCurrentPage] = useState(1);
     const [patients, setPatients] = useState(patientsData);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [editPatientModal, setEditPatientModal] = useState(false);
 
     function handleNext() {
         if (currentPage === Math.ceil(patients.length / 5)) return
@@ -392,7 +394,17 @@ export default function Patients() {
         setPatients([newPatient, ...patients])
     }
 
-    console.log(patients)
+    function editPatient(e, patient) {
+        e.preventDefault();
+        const newPatients = patients.map(p => {
+            if (p.id === patient.id) {
+                return patient
+            } else {
+                return p
+            }
+        })
+        setPatients(newPatients)
+    }
 
     return (
         <main className="patients-page">
@@ -463,11 +475,7 @@ export default function Patients() {
                                                         <img src={phone} alt='phone' className='location' /> : null}
                                                 {
                                                     // check if there is an appointment
-                                                    patient.appointments[0].date.day
-                                                        && patient.appointments[0].date.month
-                                                        && patient.appointments[0].date.year
-                                                        ?
-                                                        `${patient.appointments[0].date.day} ${patient.appointments[0].date.month} ${patient.appointments[0].date.year} ${patient.appointments[0].time}` :
+                                                    patient.appointments[0].dateText ? patient.appointments[0].dateText :
                                                         'X'
                                                 }
                                             </h6>
@@ -492,9 +500,11 @@ export default function Patients() {
                                                 <Link to='/dashboard/chat'>
                                                     <img src={chat} alt='go to chat page' />
                                                 </Link>
-                                                <Link to='/dashboard/settings'>
-                                                    <img id='dots' src={dots} alt='go to settings page' />
-                                                </Link>
+
+                                                <img onClick={() => setEditPatientModal(true)} id='dots' src={dots} alt='go to settings page' />
+                                                {editPatientModal && (
+                                                    <EditPatient setIsModalOpen={setEditPatientModal} addPatient={editPatient} patient={patient} />
+                                                )}
                                             </h6>
                                         </td>
                                     </tr>

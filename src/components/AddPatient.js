@@ -24,8 +24,6 @@ export default function AddPatient({ setIsModalOpen, addPatient }) {
         gender: ''
     })
 
-    console.log(inputs)
-
     return (
         <div className='overlay'>
             <div className='modal'>
