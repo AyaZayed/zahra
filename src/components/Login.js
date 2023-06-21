@@ -29,7 +29,9 @@ export default function Login() {
                     </div>
                     <a href='#'>هل نسيت كلمة السر؟</a>
                 </div>
-                <button type='submit' className='primary-button'>تسجيل الدخول</button>
+                <Link to='/dashboard' exact={true}>
+                    <button type='submit' className='primary-button'>تسجيل الدخول</button>
+                </Link>
                 <small style={{ 'display': 'block' }}>أو سجل باستخدام</small>
                 <div className='socials'>
                     <a href='#'> حسابك فى جوجل<img src={google} alt='login using google' /></a>

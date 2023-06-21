@@ -1833,14 +1833,18 @@ footer small:hover {
 /* appointments page */
 .appointments-page,
 .patients-page,
-.diagnosis-page {
+.diagnosis-page,
+.tool-page,
+.result-page {
   padding-top: 4rem;
 }
 
 .appointments-page .sidebar,
 .patients-page .sidebar,
-.diagnosis-page .sidebar {
-  top: 8.9rem;
+.diagnosis-page .sidebar,
+.tool-page .sidebar,
+.result-page .sidebar {
+  top: 4.6rem;
 }
 
 .appointments-page .main-content {
@@ -1852,7 +1856,9 @@ footer small:hover {
 
 .appointments-page .appointments-nav,
 .patients-page .patients-nav,
-.diagnosis-page .diagnosis-nav {
+.diagnosis-page .diagnosis-nav,
+.tool-page .diagnosis-nav,
+.result-page .diagnosis-nav {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -1870,10 +1876,35 @@ footer small:hover {
 
 .appointments-page .appointments-nav h6,
 .patients-nav .patients-nav h6,
-.diagnosis-page .diagnosis-nav h6 {
+.diagnosis-page .diagnosis-nav h6,
+.tool-page .diagnosis-nav h6,
+.result-page .diagnosis-nav h6 {
   margin: 0;
-  font-weight: 700;
   padding-bottom: 1.5rem;
+  font-weight: 700;
+  font-family: var(--secondary-font-family);
+}
+
+.tool-page .diagnosis-nav .tabs,
+.result-page .diagnosis-nav .tabs {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7rem;
+}
+
+.tool-page .diagnosis-nav .tabs h6,
+.result-page .diagnosis-nav .tabs h6 {
+  font-weight: normal;
+}
+
+.tool-page .diagnosis-nav .tabs h6.active,
+.result-page .diagnosis-nav .tabs h6.active {
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .diagnosis-page .diagnosis-nav h6 {
@@ -1887,7 +1918,9 @@ footer small:hover {
 
 .appointments-page .appointments-nav .profile,
 .patients-page .patients-nav .profile,
-.diagnosis-page .diagnosis-nav .profile {
+.diagnosis-page .diagnosis-nav .profile,
+.tool-page .diagnosis-nav .profile,
+.result-page .diagnosis-nav .profile {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -1898,7 +1931,9 @@ footer small:hover {
 
 .appointments-page .appointments-nav .profile img,
 .patients-page .patients-nav .profile img,
-.diagnosis-page .diagnosis-nav .profile img {
+.diagnosis-page .diagnosis-nav .profile img,
+.tool-page .diagnosis-nav .profile img,
+.result-page .diagnosis-nav .profile img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -1913,7 +1948,9 @@ footer small:hover {
 
 .appointments-page .appointments-nav .profile .default-img,
 .patients-page .patients-nav .profile .default-img,
-.diagnosis-page .diagnosis-nav .profile .default-img {
+.diagnosis-page .diagnosis-nav .profile .default-img,
+.tool-page .diagnosis-nav .profile .default-img,
+.result-page .diagnosis-nav .profile .default-img {
   width: 33px;
   height: 33px;
   background-color: var(--light-grey);
@@ -2800,4 +2837,182 @@ footer small:hover {
 .diagnosis-page .diagnosis-types button {
   padding: .5rem 1rem;
   width: 8rem;
+}
+
+/* .tool page */
+
+.tool-page .tool-content h6,
+.tool-page .tool-content li {
+  color: var(--primary-color);
+}
+
+.tool-page .tool-content .content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.tool-page form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem;
+  min-height: 60vh;
+  color: var(--white);
+  text-align: center;
+}
+
+.tool-page form input[type='file'] {
+  display: none;
+}
+
+.tool-page form .file-input label {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.tool-page form .file-input label img,
+.tool-page form .file-input label small {
+  margin-bottom: .5rem;
+}
+
+.tool-page .file-input {
+  background: rgba(135, 29, 99, 0.5);
+  padding: 4rem;
+  border: 5px dashed #871D63;
+}
+
+.tool-form .primary-button {
+  padding: .5rem 2rem .7rem;
+}
+
+.tool-page .analysis {
+  background: rgba(135, 29, 99, 0.5);
+  padding: 2rem 4rem;
+  border: 5px dashed #871D63;
+  width: 100%;
+  text-align: center;
+}
+
+.tool-page .analysis h6 {
+  color: var(--white);
+}
+
+@media (min-width: 768px) {
+  .tool-page .tool-content .analysis {
+    width: 25%;
+  }
+}
+
+.tool-page .tool-content {
+  padding: 0rem 7rem 2rem 2rem;
+}
+
+.result-page {
+  padding: 0 6rem 2rem 2rem;
+
+}
+
+.result-page .result-content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.result-page .result-content .primary-button {
+  padding: .5rem 2rem .7rem;
+}
+
+.result-page .result-details,
+.result-page .result {
+  width: 100%;
+  background: rgba(135, 29, 99, 0.5);
+  padding: 2rem 2rem 2rem 4rem;
+  border: 5px dashed #871D63;
+  width: 80%;
+  text-align: center;
+}
+
+.result-page .result {
+  color: var(--white);
+}
+
+.result-page .result-details {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.result-page .result-details .col1 {
+  flex-basis: 45%;
+}
+
+.result-page .result-details .col2 {
+  flex-basis: 45%;
+}
+
+.result-page .result-details h6 {
+  background-color: var(--white);
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 1rem;
+  direction: ltr;
+}
+
+@media (min-width: 768px) {
+
+  .result-page .result-details,
+  .result-page .result {
+    width: 40%;
+  }
+}
+
+.result-page .modal {
+  background-color: var(--grey);
+
+}
+
+.result-page .modal .content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.result-page .modal .content .buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.result-page .modal .content .buttons button {
+  padding: .5rem 2rem .7rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  width: 7rem;
+  justify-content: center;
+}
+
+.result-page .modal .content .buttons button img {
+  width: 20px;
+  height: 20px;
 }

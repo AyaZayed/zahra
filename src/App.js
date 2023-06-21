@@ -11,6 +11,7 @@ import Layout from './components/Layout'
 import Patients from './components/Patients'
 import Diagnosis from './components/Diagnosis'
 import Tool from './components/Tool'
+import Result from './components/Result'
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
           <Route path='/dashboard/patients' element={<Patients />} />
           <Route path='/dashboard/diagnosis' element={<Diagnosis />} />
           <Route path='/dashboard/diagnosis/tool' element={<Tool />} />
+          <Route path='/dashboard/diagnosis/result' element={<Result />} />
         </Route>
       </Routes>
     </>
