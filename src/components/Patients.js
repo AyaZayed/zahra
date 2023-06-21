@@ -11,9 +11,11 @@ import checkmark from '../assets/icons/check.png'
 import report from '../assets/icons/report.png'
 import chat from '../assets/icons/chat.png'
 import dots from '../assets/icons/dots.png'
+import plus from '../assets/icons/plus.png'
+import AddPatient from './AddPatient';
 
 export default function Patients() {
-    const patients = [
+    const patientsData = [
         {
             id: '1',
             name: 'كريم الموجي',
@@ -340,11 +342,57 @@ export default function Patients() {
     };
 
     const [currentPage, setCurrentPage] = useState(1);
+    const [patients, setPatients] = useState(patientsData);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     function handleNext() {
         if (currentPage === Math.ceil(patients.length / 5)) return
         setCurrentPage(currentPage + 1)
     }
+
+    function searchPatient(e) {
+        const searchValue = e.target.value;
+        if (searchValue === '') {
+            setPatients(patientsData);
+        } else {
+            setPatients(patientsData.filter(patient => patient.name.includes(searchValue)))
+        }
+    }
+
+    function addPatient(e, patient) {
+        e.preventDefault();
+        const newPatient = {
+            id: String(patients.length + 1),
+            name: patient.name,
+            age: Number(patient.age),
+            gender: patient.gender,
+            phone: patient.phone,
+            img: '',
+            email: patient.email,
+            appointments: [{
+                id: String(patients.length + 1),
+                date: { day: '', month: '', year: '' },
+                time: '',
+            }],
+            tests: [
+                {
+                    type: 'CT',
+                    isDone: false,
+                },
+                {
+                    type: 'Path',
+                    isDone: false,
+                },
+                {
+                    type: 'DNA',
+                    isDone: false,
+                },
+            ]
+        }
+        setPatients([newPatient, ...patients])
+    }
+
+    console.log(patients)
 
     return (
         <main className="patients-page">
@@ -358,12 +406,21 @@ export default function Patients() {
                 </Link>
             </div>
             <Sidebar />
-            <div className='main-content' style={{ padding: '6rem' }}>
+            <div className='main-content'>
                 <div className='search'>
                     <img src={searchIcon} alt='search' />
-                    <input type='text' placeholder='بحث عن مريض ...' />
+                    <input type='text' placeholder='بحث عن مريض ...' onChange={(e) => searchPatient(e)} />
                 </div>
                 <div className='patients'>
+                    <div className='add'>
+                        <button onClick={() => setIsModalOpen(true)}>
+                            <img src={plus} alt='add' />
+                            <h6>إضافة مريض</h6>
+                        </button>
+                    </div>
+                    {isModalOpen && (
+                        <AddPatient setIsModalOpen={setIsModalOpen} addPatient={addPatient} />
+                    )}
                     <div className='patients-header'>
                         <h5>
                             {patients.length <= 10 ? `${patients.length} مرضى` : `${patients.length} مريض`}
@@ -389,43 +446,62 @@ export default function Patients() {
                                     <th>رقم الهاتف</th>
                                     <th>البريد</th>
                                     <th>الفحوص</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {patients.slice((currentPage - 1) * 5, currentPage * 5).map(patient => (
                                     <tr key={patient.id}>
-                                        <td>{patient.name}</td>
-                                        <td>{patient.gender}</td>
-                                        <td>{patient.age}</td>
-                                        <td>{patient.appointments[0].location === 'clinic' ?
-                                            <img src={location} alt='clinic' className='location' /> :
-                                            patient.appointments[0].location === 'phone' ?
-                                                <img src={phone} alt='phone' className='location' /> : null}</td>
-                                        <td>{patient.phone}</td>
-                                        <td>{patient.email}</td>
-                                        <td>
-                                            {patient.tests.map(test => (
-                                                <small className={`${test.isDone && 'is-done'}`} >
-                                                    {test.isDone && <img src={checkmark} alt='checkmark' />}
-                                                    {test.type}
-                                                </small>
-                                            ))}
+                                        <td id='name'>{patient.name}</td>
+                                        <td>{patient.gender || 'X'}</td>
+                                        <td>{patient.age || 'X'}</td>
+                                        <td className='appointment'>
+                                            <h6>
+                                                {patient.appointments[0].location === 'clinic' ?
+                                                    <img src={location} alt='clinic' className='location' /> :
+                                                    patient.appointments[0].location === 'phone' ?
+                                                        <img src={phone} alt='phone' className='location' /> : null}
+                                                {
+                                                    // check if there is an appointment
+                                                    patient.appointments[0].date.day
+                                                        && patient.appointments[0].date.month
+                                                        && patient.appointments[0].date.year
+                                                        ?
+                                                        `${patient.appointments[0].date.day} ${patient.appointments[0].date.month} ${patient.appointments[0].date.year} ${patient.appointments[0].time}` :
+                                                        'X'
+                                                }
+                                            </h6>
                                         </td>
-                                        <td>
-                                            <Link to='/dashboard/diagnosis'>
-                                                <img src={report} alt='go to diagnosis page' />
-                                            </Link>
-                                            <Link to='/dashboard/chat'>
-                                                <img src={chat} alt='go to chat page' />
-                                            </Link>
-                                            <Link to='/dashboard/settings'>
-                                                <img src={dots} alt='go to settings page' />
-                                            </Link>
+                                        <td>{patient.phone || 'X'}</td>
+                                        <td>{patient.email || 'X'}</td>
+                                        <td id='tests'>
+                                            <h6>
+                                                {patient.tests.length != 0 ? patient.tests.map(test => (
+                                                    <small key={test.type} className={`${test.isDone && 'is-done'}`} >
+                                                        {test.isDone && <img src={checkmark} alt='checkmark' />}
+                                                        {test.type}
+                                                    </small>
+                                                )) : 'X'}
+                                            </h6>
+                                        </td>
+                                        <td id='imgs'>
+                                            <h6>
+                                                <Link to='/dashboard/diagnosis'>
+                                                    <img src={report} alt='go to diagnosis page' />
+                                                </Link>
+                                                <Link to='/dashboard/chat'>
+                                                    <img src={chat} alt='go to chat page' />
+                                                </Link>
+                                                <Link to='/dashboard/settings'>
+                                                    <img id='dots' src={dots} alt='go to settings page' />
+                                                </Link>
+                                            </h6>
                                         </td>
                                     </tr>
                                 ))}
                             </tbody>
                         </table>
+
                     </div>
                 </div>
             </div>
