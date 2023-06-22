@@ -408,7 +408,8 @@ export default function Patients() {
 
     return (
         <main className="patients-page">
-            <div className='patients-nav'>
+            <div className='secondary-nav patients-nav'>
+                <div></div>
                 <Link to='/dashboard/settings'>
                     <div className='profile'>
                         <h6>د. {user.name}</h6>

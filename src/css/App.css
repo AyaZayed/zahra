@@ -638,7 +638,7 @@ footer small:hover {
 .login-page .login-image {
   background: url(../assets/illustorations/login-background.png) no-repeat center center/cover;
   order: 2;
-  height: 115vh;
+  height: 120vh;
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
@@ -702,7 +702,7 @@ footer small:hover {
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
   }
 
   .login-page .login-text {
@@ -1069,11 +1069,11 @@ footer small:hover {
 }
 
 .subscribe .login-image {
-  height: 122vh;
+  height: 134vh;
 }
 
 .payment .login-image {
-  height: 112vh;
+  height: 122vh;
 }
 
 .payment-form .payment-choice {
@@ -1457,16 +1457,17 @@ footer small:hover {
 /* sidebar */
 
 .sidebar {
-  position: fixed;
-  top: 5.2rem;
-  right: -5rem;
-  height: 100vh;
-  width: 5rem;
+  position: absolute;
+  top: 3rem;
+  width: 100%;
+  right: -100%;
+  height: fit-content;
   background-color: var(--white);
   z-index: 100;
   display: flex;
-  flex-flow: column nowrap;
   align-items: center;
+  flex-flow: row wrap;
+  justify-content: space-between;
   transform: translateX(-100%);
   transition: all .3s ease;
   -webkit-transition: all .3s ease;
@@ -1477,8 +1478,22 @@ footer small:hover {
   box-shadow: 1px 7px 4px 2px #00000040;
 }
 
+@media (min-width: 768px) {
+  .sidebar {
+    top: 5.2rem;
+    right: -5rem;
+    width: 5rem;
+    height: 100vh;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+  }
+
+  .sidebar a {
+    margin-top: 1rem;
+  }
+}
+
 .sidebar a {
-  margin-top: 1rem;
   width: 4.8rem;
   padding: .5rem 0;
 }
@@ -1486,7 +1501,16 @@ footer small:hover {
 .sidebar a.active,
 .sidebar a:hover {
   background-color: #f4efe7;
-  border-right: 3px solid var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+@media (min-width: 768px) {
+
+  .sidebar a.active,
+  .sidebar a:hover {
+    border-bottom: none;
+    border-right: 3px solid var(--primary-color);
+  }
 }
 
 .sidebar img {
@@ -1831,139 +1855,30 @@ footer small:hover {
 }
 
 /* appointments page */
-.appointments-page,
-.patients-page,
-.diagnosis-page,
-.tool-page,
-.result-page {
-  padding-top: 4rem;
-}
 
-.appointments-page .sidebar,
-.patients-page .sidebar,
-.diagnosis-page .sidebar,
-.tool-page .sidebar,
-.result-page .sidebar {
-  top: 4.6rem;
+.sidebar {
+  top: 3.8rem;
 }
 
 .appointments-page .main-content {
-  padding-right: 7rem;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  padding: 0 2rem;
 }
 
-.appointments-page .appointments-nav,
-.patients-page .patients-nav,
-.diagnosis-page .diagnosis-nav,
-.tool-page .diagnosis-nav,
-.result-page .diagnosis-nav {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  background-color: var(--white);
-  padding: 2rem 6rem 0;
-}
-
-.patients-page .patients-nav,
-.diagnosis-page .diagnosis-nav {
-  justify-content: flex-end;
-  padding-bottom: 1.7rem;
-}
-
-.appointments-page .appointments-nav h6,
-.patients-nav .patients-nav h6,
-.diagnosis-page .diagnosis-nav h6,
-.tool-page .diagnosis-nav h6,
-.result-page .diagnosis-nav h6 {
-  margin: 0;
-  padding-bottom: 1.5rem;
-  font-weight: 700;
-  font-family: var(--secondary-font-family);
-}
-
-.tool-page .diagnosis-nav .tabs,
-.result-page .diagnosis-nav .tabs {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 7rem;
-}
-
-.tool-page .diagnosis-nav .tabs h6,
-.result-page .diagnosis-nav .tabs h6 {
-  font-weight: normal;
-}
-
-.tool-page .diagnosis-nav .tabs h6.active,
-.result-page .diagnosis-nav .tabs h6.active {
-  color: var(--primary-color);
-  border-bottom: 3px solid var(--primary-color);
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
-.diagnosis-page .diagnosis-nav h6 {
-  padding-bottom: .2rem;
-}
-
-.appointments-page .appointments-nav #list {
-  color: var(--primary-color);
-  border-bottom: 3px solid var(--primary-color);
-}
-
-.appointments-page .appointments-nav .profile,
-.patients-page .patients-nav .profile,
-.diagnosis-page .diagnosis-nav .profile,
-.tool-page .diagnosis-nav .profile,
-.result-page .diagnosis-nav .profile {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  position: relative;
-}
-
-.appointments-page .appointments-nav .profile img,
-.patients-page .patients-nav .profile img,
-.diagnosis-page .diagnosis-nav .profile img,
-.tool-page .diagnosis-nav .profile img,
-.result-page .diagnosis-nav .profile img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  position: absolute;
-  top: -5px;
-  left: -50px;
-}
-
-.appointments-page .appointments-nav .profile .default-img,
-.patients-page .patients-nav .profile .default-img,
-.diagnosis-page .diagnosis-nav .profile .default-img,
-.tool-page .diagnosis-nav .profile .default-img,
-.result-page .diagnosis-nav .profile .default-img {
-  width: 33px;
-  height: 33px;
-  background-color: var(--light-grey);
-  padding: .3rem;
-  left: -60px;
+@media (min-width: 768px) {
+  .sidebar {
+    top: 4.6rem;
+  }
 }
 
 .appointments-page .date-picker {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .appointments-page .date-picker img {
@@ -1980,22 +1895,32 @@ footer small:hover {
 .appointments-page .date-picker .today {
   display: flex;
   gap: .3rem;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
-.appointments-page .date-picker .top-right-curve {
-  border-radius: 0px 25px 0px 0px;
-}
+@media (min-width: 768px) {
 
-.appointments-page .date-picker .bottom-right-curve {
-  border-radius: 0px 0px 25px 0px;
-}
+  .appointments-page .date-picker .selects,
+  .appointments-page .date-picker .today {
+    flex-flow: row nowrap;
+  }
 
-.appointments-page .date-picker .top-left-curve {
-  border-radius: 25px 0px 0px 0px;
-}
+  .appointments-page .date-picker .top-right-curve {
+    border-radius: 0px 25px 0px 0px;
+  }
 
-.appointments-page .date-picker .bottom-left-curve {
-  border-radius: 0px 0px 0px 25px;
+  .appointments-page .date-picker .bottom-right-curve {
+    border-radius: 0px 0px 25px 0px;
+  }
+
+  .appointments-page .date-picker .top-left-curve {
+    border-radius: 25px 0px 0px 0px;
+  }
+
+  .appointments-page .date-picker .bottom-left-curve {
+    border-radius: 0px 0px 0px 25px;
+  }
 }
 
 .appointments-page .date-picker .selects select {
@@ -2162,12 +2087,12 @@ footer small:hover {
 /* patients page */
 
 .patients-page .main-content {
-  padding-right: 7rem;
-  padding-left: 2rem;
+  padding: 0 2rem;
 }
 
 .patients-page .search {
   position: relative;
+  margin-bottom: 1rem;
 }
 
 .patients-page .search input {
@@ -2188,6 +2113,10 @@ footer small:hover {
 @media (min-width: 768px) {
   .patients-page .search input {
     width: 40%;
+  }
+
+  .patients-page .main-content {
+    padding-right: 7rem;
   }
 }
 
@@ -2380,7 +2309,7 @@ footer small:hover {
 
 .modal {
   z-index: 1000;
-  background-color: #C6C2B9;
+  background-color: #ECE8DD;
   padding: 2rem;
   border-radius: 25px;
   max-width: 40rem;
@@ -2847,6 +2776,10 @@ footer small:hover {
 
 /* .tool page */
 
+.tool-page {
+  padding-top: 9rem;
+}
+
 .tool-page .tool-content h6,
 .tool-page .tool-content li {
   color: var(--primary-color);
@@ -2908,19 +2841,23 @@ footer small:hover {
   color: var(--white);
 }
 
+
+.tool-page .tool-content {
+  padding: 2rem;
+}
+
 @media (min-width: 768px) {
   .tool-page .tool-content .analysis {
     width: 25%;
   }
-}
 
-.tool-page .tool-content {
-  padding: 0rem 7rem 2rem 2rem;
+  .tool-page .tool-content {
+    padding-right: 7rem;
+  }
 }
 
 .result-page {
-  padding: 0 6rem 2rem 2rem;
-
+  padding-top: 9rem;
 }
 
 .result-page .result-content {
@@ -2929,6 +2866,7 @@ footer small:hover {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  padding: 2rem;
 }
 
 .result-page .result-content .primary-button {
@@ -2939,7 +2877,7 @@ footer small:hover {
 .result-page .result {
   width: 100%;
   background: rgba(135, 29, 99, 0.5);
-  padding: 2rem 2rem 2rem 4rem;
+  padding: 2rem;
   border: 5px dashed #871D63;
   width: 80%;
   text-align: center;
@@ -2951,17 +2889,19 @@ footer small:hover {
 
 .result-page .result-details {
   display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-page .result-details .row {
+  display: flex;
   flex-flow: row nowrap;
   gap: 1rem;
+  width: 100%;
   justify-content: space-between;
-}
-
-.result-page .result-details .col1 {
-  flex-basis: 45%;
-}
-
-.result-page .result-details .col2 {
-  flex-basis: 45%;
+  align-items: center;
 }
 
 .result-page .result-details h6 {
@@ -2974,22 +2914,29 @@ footer small:hover {
   padding: .5rem 1rem;
   margin-bottom: 1rem;
   width: 100%;
-  height: 1rem;
+  height: fit-content;
   direction: ltr;
+  min-height: 1.2rem;
+}
+
+.result-page .modal {
+  background-color: var(--grey);
+  width: 80%;
 }
 
 @media (min-width: 768px) {
 
   .result-page .result-details,
   .result-page .result {
-    width: 40%;
+    width: 50%;
+  }
+
+  .result-page .modal {
+    width: fit-content;
   }
 }
 
-.result-page .modal {
-  background-color: var(--grey);
 
-}
 
 .result-page .modal .content {
   display: flex;
@@ -3021,4 +2968,117 @@ footer small:hover {
 .result-page .modal .content .buttons button img {
   width: 20px;
   height: 20px;
+}
+
+.appointments-item .patient-info .img-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+}
+
+.appointments-item:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  transform: scale(1.01);
+  -webkit-transform: scale(1.01);
+  -moz-transform: scale(1.01);
+  -ms-transform: scale(1.01);
+  -o-transform: scale(1.01);
+}
+
+@media (min-width: 768px) {
+  .appointments-page .main-content {
+    padding-right: 7rem;
+  }
+}
+
+.secondary-nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.secondary-nav a {
+  padding: 1rem 0;
+  font-weight: 700;
+  font-family: var(--secondary-font-family);
+}
+
+.secondary-nav .profile {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.secondary-nav .profile h6 {
+  padding-bottom: .3rem;
+}
+
+.secondary-nav .profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.secondary-nav .profile img.default-img {
+  width: 33px;
+  height: 33px;
+  padding: .3rem;
+}
+
+.secondary-nav .profile .default-img {
+  background-color: var(--light-grey);
+}
+
+.secondary-nav .active {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.secondary-nav .tabs {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .secondary-nav {
+    padding: 0 7rem;
+  }
+
+  .secondary-nav .tabs {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .appointments-page,
+  .patients-page,
+  .diagnosis-page,
+  .tool-page,
+  .result-page {
+    padding-top: 4.8rem;
+  }
 }

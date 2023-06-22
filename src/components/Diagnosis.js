@@ -37,7 +37,8 @@ export default function Diagnosis() {
 
     return (
         <div className='diagnosis-page'>
-            <nav className='diagnosis-nav'>
+            <nav className='secondary-nav diagnosis-nav'>
+                <div></div>
                 <Link to='/dashboard/settings'>
                     <div className='profile'>
                         <h6>د. {user.name}</h6>
@@ -63,7 +64,7 @@ export default function Diagnosis() {
                 </label>
                 <h6>اختر نوع الفحص </h6>
                 <div className='diagnosis-types'>
-                    <button type='submit' className='primary-button diagnosis-type' onClick={(e) => setDiagnosisType('CSD')}>CSD</button>
+                    <button type='submit' className='primary-button diagnosis-type' onClick={(e) => setDiagnosisType('FNA Biopsy')}>FNA Biopsy</button>
                     <button type='submit' className='primary-button diagnosis-type' onClick={(e) => setDiagnosisType('Pathology')}>Pathology</button>
                     <button type='submit' className='primary-button diagnosis-type' onClick={(e) => setDiagnosisType('DNA')}>DNA</button>
                 </div>

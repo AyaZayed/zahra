@@ -28,10 +28,10 @@ export default function Tool() {
 
     return (
         <div className='tool-page'>
-            <nav className='diagnosis-nav'>
+            <nav className='secondary-nav diagnosis-nav'>
                 <div></div>
                 <div className='tabs'>
-                    <h6 className={`${type === 'CSD' ? 'active' : 'tab'}`}>CT (CSD)</h6>
+                    <h6 className={`${type === 'FNA Biopsy' ? 'active' : 'tab'}`}>CT (FNA Biopsy)</h6>
                     <h6 className={`${type === 'Pathology' ? 'active' : 'tab'}`}>PATH</h6>
                     <h6 className={`${type === 'DNA' ? 'active' : 'tab'}`}>DNA</h6>
                 </div>

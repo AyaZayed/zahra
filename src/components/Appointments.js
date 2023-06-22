@@ -111,10 +111,20 @@ export default function Appointments() {
         }
     }
 
+    function resetAppointments() {
+        setShowAll(false);
+        // reset to today
+        setPickedDate({
+            day: today.day,
+            month: today.month,
+            year: today.year
+        })
+    }
+
     return (
         <main className='appointments-page'>
-            <div className='appointments-nav'>
-                <h6 id='list'>قائمة المواعيد</h6>
+            <div className='secondary-nav appointments-nav'>
+                <Link id='list' to='#' className='active'>قائمة المواعيد</Link>
                 <Link to='/dashboard/settings'>
                     <div className='profile'>
                         <h6>د. {user.name}</h6>
@@ -124,27 +134,38 @@ export default function Appointments() {
                 </Link>
             </div>
             <div className='show-all'>
-                <input type='checkbox' name='show-all' id='show-all' onChange={() => setShowAll(!showAll)} />
+                <input type='checkbox'
+                    checked={showAll}
+                    name='show-all' id='show-all' onChange={() => setShowAll(!showAll)} />
                 <label htmlFor='show-all'>عرض الكل</label>
             </div>
             <Sidebar />
             <div className='main-content'>
                 <div className='date-picker'>
-                    <img src={refresh} alt='refresh' />
+                    <img src={refresh} alt='refresh' onClick={() => resetAppointments()} />
                     <div className='date-info'>
                         <div className='selects'>
                             <select name='day' id='day' className='top-right-curve'
-                                onChange={(e) => setPickedDate({ ...pickedDate, day: Number(e.target.value) })}>
+                                onChange={(e) => {
+                                    setShowAll(false)
+                                    setPickedDate({ ...pickedDate, day: Number(e.target.value) })
+                                }}>
                                 <option value=''>اليوم</option>
                                 {dateArr[0].map(day => <option key={day} value={day}>{day}</option>)}
                             </select>
                             <select name='month' id='month'
-                                onChange={(e) => setPickedDate({ ...pickedDate, month: e.target.value })}>
+                                onChange={(e) => {
+                                    setShowAll(false)
+                                    setPickedDate({ ...pickedDate, month: e.target.value })
+                                }}>
                                 <option value=''>الشهر</option>
                                 {dateArr[1].map(month => <option key={month} value={month}>{month}</option>)}
                             </select>
                             <select name='year' id='year' className='top-left-curve'
-                                onChange={(e) => setPickedDate({ ...pickedDate, year: Number(e.target.value) })}>
+                                onChange={(e) => {
+                                    setShowAll(false)
+                                    setPickedDate({ ...pickedDate, year: Number(e.target.value) })
+                                }}>
                                 <option value=''>السنة</option>
                                 {dateArr[2].map(year => <option key={year} value={year}>{year}</option>)}
                             </select>

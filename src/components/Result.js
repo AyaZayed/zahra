@@ -20,10 +20,10 @@ export default function Result() {
 
     return (
         <div className='result-page'>
-            <nav className='diagnosis-nav'>
+            <nav className='secondary-nav diagnosis-nav'>
                 <div></div>
                 <div className='tabs'>
-                    <h6 className={`${type == 'CSD' ? 'active' : 'tab'}`}>CT (CSD)</h6>
+                    <h6 className={`${type == 'FNA Biopsy' ? 'active' : 'tab'}`}>CT (FNA Biopsy)</h6>
                     <h6 className={`${type == 'Pathology' ? 'active' : 'tab'}`}>PATH</h6>
                     <h6 className={`${type == 'DNA' ? 'active' : 'tab'}`}>DNA</h6>
                 </div>
@@ -38,37 +38,41 @@ export default function Result() {
             <Sidebar />
             <div className='result-content'>
                 <div className='result-details'>
-                    <div className='col1'>
+                    <div className='row'>
                         <h6></h6>
-                        <h6></h6>
-                        <h6></h6>
-                        <h6></h6>
-                        <h6></h6>
-                        <h6></h6>
-                        <h6></h6>
-                        <h6></h6>
-                        <h6></h6>
-                        <h6></h6>
-                        <h6></h6>
-                        <h6></h6>
-                        <h6></h6>
-                        <h6></h6>
+                        <h6>Radius mean :</h6>
                     </div>
-                    <div className='col2'>
-                        <h6>Area mean :</h6>
+                    <div className='row'>
+                        <h6></h6>
                         <h6>Texture mean :</h6>
+                    </div>
+                    <div className='row'>
+                        <h6></h6>
                         <h6>Perimeter mean :</h6>
-                        <h6>Concavity mean :</h6>
+                    </div>
+                    <div className='row'>
+                        <h6></h6>
+                        <h6>Area mean :</h6>
+                    </div>
+                    <div className='row'>
+                        <h6></h6>
+                        <h6>Smoothness mean :</h6>
+                    </div>
+                    <div className='row'>
+                        <h6></h6>
+                        <h6>Compactness mean:</h6>
+                    </div>
+                    <div className='row'>
+                        <h6></h6>
+                        <h6>Concavity mean:</h6>
+                    </div>
+                    <div className='row'>
+                        <h6></h6>
+                        <h6>Concave points mean :</h6>
+                    </div>
+                    <div className='row'>
+                        <h6></h6>
                         <h6>Symmetry mean :</h6>
-                        <h6>Fractal dimension mean:</h6>
-                        <h6>Area SE :</h6>
-                        <h6>Concavity SE :</h6>
-                        <h6>Symmetry SE :</h6>
-                        <h6>Fractal dimension SE:</h6>
-                        <h6>Smoothness worst :</h6>
-                        <h6>Concavity worst :</h6>
-                        <h6>Symmetry worst :</h6>
-                        <h6>Fractal dimension worst:</h6>
                     </div>
                 </div>
                 <div className='result'>

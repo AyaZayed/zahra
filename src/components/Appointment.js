@@ -7,7 +7,7 @@ import clock from '../assets/icons/time.png'
 export default function Appointment({ appointment, deleteAppointment, dashboard = false }) {
 
     return (
-        <div className='appointments-item' key={appointment.id} >
+        <div className={`appointments-item ${dashboard ? 'dashboard' : 'card'}`} key={appointment.id} >
             <div className='patient-info'>
                 <div className='img-container'>
                     <img src={appointment.patientImg} alt='patient' />
@@ -27,8 +27,8 @@ export default function Appointment({ appointment, deleteAppointment, dashboard 
                 {!dashboard &&
                     appointment.hasPaid && <small><img src={money} alt='money' />تم استلام : {appointment.payment}</small>
                 }
-                <img src={clock} alt='clock' />
                 <small>
+                    <img src={clock} alt='clock' />
                     {appointment.date.day} {appointment.date.month} {appointment.date.year} {appointment.time}
                 </small>
             </div>
