@@ -17,7 +17,7 @@ export default function Signup() {
                 <div className='first-group'>
                     <label className='primary-label'>
                         <img src={user} alt='user' className='icon' />
-                        <input classname='primary-input' type="text" placeholder='أدخل اسمك الكامل'></input>
+                        <input className='primary-input' type="text" placeholder='أدخل اسمك الكامل'></input>
                     </label>
                     <div className='img-container'>
                         <img src={camera} alt='camera when pressed uploads a profile photo' id='camera' />
@@ -25,18 +25,18 @@ export default function Signup() {
                 </div>
                 <label className='primary-label'>
                     <img src={lock} alt='lock' className='icon' />
-                    <input classname='primary-input' type="password" placeholder='كلمة السر ' />
+                    <input className='primary-input' type="password" placeholder='كلمة السر ' />
                     <img src={eye} alt='an eye when pressed makes the password unhidden' id='eye' />
                 </label>
                 <label className='primary-label'>
                     <img src={lock} alt='lock' className='icon' />
-                    <input classname='primary-input' type="password" placeholder='تأكيد كلمة السر ' />
+                    <input className='primary-input' type="password" placeholder='تأكيد كلمة السر ' />
                     <img src={eye} alt='an eye when pressed makes the password unhidden' id='eye' />
                 </label>
                 <div className='second-group'>
                     <label className='primary-label'>
                         <img src={phoneIcon} alt='phone' className='icon' />
-                        <input classname='primary-input' type="tel" placeholder='رقم الهاتف'></input>
+                        <input className='primary-input' type="tel" placeholder='رقم الهاتف'></input>
                     </label>
                     <select className='country'>
                         <option>البلد</option>

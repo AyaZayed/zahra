@@ -25,7 +25,7 @@ export default function Home() {
                     <div className="welcome-text">
                         <h2>مرحباً بك في <span><img src={logo} alt='zahra' /></span> للأطباء</h2>
                         <p>أول موقع عربى لمساعدتك كطبيب فى تشخيص مرض سرطان الثدى </p>
-                        <Link to='login' exact='true'><button className='primary-button'>انضم الآن</button></Link>
+                        <Link to='/login' state={true} exact='true'><button className='primary-button'>انضم الآن</button></Link>
                     </div>
                     <div className="welcome-image">
                         <img src={welcome} alt='image of three doctors in lab coats' />

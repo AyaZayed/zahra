@@ -14,10 +14,11 @@ import Tool from './components/Tool'
 import Result from './components/Result'
 
 export default function App() {
+  const hi = 'hi'
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home hi={hi} />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/subscribe" element={<Subscribe />} />
         <Route path='/payment' element={<Payment />} />

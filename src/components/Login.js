@@ -5,6 +5,7 @@ import user from '../assets/icons/user.png'
 import lock from '../assets/icons/lock.png'
 import eye from '../assets/icons/eye.png'
 import checkmark from '../assets/icons/checkmark.png'
+import { Link } from 'react-router-dom'
 
 export default function Login() {
     return (
@@ -18,7 +19,7 @@ export default function Login() {
                     </label>
                     <label className='primary-label'>
                         <img src={lock} alt='lock' className='icon' />
-                        <input classname='primary-input' type="password" placeholder='كلمة السر ' />
+                        <input className='primary-input' type="password" placeholder='كلمة السر ' />
                         <img src={eye} alt='an eye when pressed makes the password unhidden' id='eye' />
                     </label>
                 </div>
