@@ -2387,6 +2387,8 @@ footer small:hover {
   position: relative;
   font-family: var(--secondary-font-family);
   color: var(--primary-color);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   width: 100%;
 }
@@ -2617,6 +2619,8 @@ footer small:hover {
 }
 
 .edit-patient .modal .appointments .appointments-item {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
 }
 
@@ -2692,6 +2696,8 @@ footer small:hover {
 
 .edit-patient .calendar h6 {
   text-align: right;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import loginImage from '../assets/illustorations/login-page.png'
 import hospital from '../assets/icons/hospital.png'
-import address from '../assets/icons/address.png'
+import address from '../assets/icons/location.png'
 import hash from '../assets/icons/hash.png'
 import { Link } from 'react-router-dom'
 
@@ -27,15 +27,15 @@ export default function Subscribe() {
                     </label>
                     <label className='primary-label'>
                         <img src={address} alt='address' className='icon' />
-                        <input classname='primary-input' type="text" placeholder='أدخل العنوان'></input>
+                        <input className='primary-input' type="text" placeholder='أدخل العنوان'></input>
                     </label>
                     <label className='primary-label'>
                         <img src={hash} alt='hash sign' className='icon' />
-                        <input classname='primary-input' type="text" placeholder='رقم السجل الضريبي'></input>
+                        <input className='primary-input' type="text" placeholder='رقم السجل الضريبي'></input>
                     </label>
                     <label className='primary-label'>
                         <img src={hash} alt='hash sign' className='icon' />
-                        <input classname='primary-input' type="text" placeholder='رقم السجل التجاري'></input>
+                        <input className='primary-input' type="text" placeholder='رقم السجل التجاري'></input>
                     </label>
                     <h6>اختر الاشتراك المناسب لك</h6>
 
