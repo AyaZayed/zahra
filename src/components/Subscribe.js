@@ -1,7 +1,7 @@
 import React from 'react'
 import loginImage from '../assets/illustorations/login-page.png'
 import hospital from '../assets/icons/hospital.png'
-import address from '../assets/icons/address.png'
+import address from '../assets/icons/location.png'
 import hash from '../assets/icons/hash.png'
 import { Link } from 'react-router-dom'
 
