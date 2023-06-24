@@ -3072,6 +3072,14 @@ footer small:hover {
   }
 }
 
+.appointments-page,
+.patients-page,
+.diagnosis-page,
+.tool-page,
+.result-page {
+  padding-top: 12rem;
+}
+
 @media (min-width: 768px) {
 
   .appointments-page,
